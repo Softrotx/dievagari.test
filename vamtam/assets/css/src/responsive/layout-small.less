@@ -1,0 +1,252 @@
+body.responsive-layout {
+	.page-header {
+		align-items: center !important;
+	}
+
+	.alignleft,
+	.alignright {
+		float: none;
+		display: block;
+		&.wp-caption {
+		   margin: 1.5em 0
+		}
+	}
+	img {
+		&.alignleft,
+		&.alignright {
+			margin: 1.5em 0;
+		}
+	}
+
+	.vamtam-box-outer-padding,
+	.limit-wrapper,
+	.header-padding,
+	body.has-blocks:not(.fl-builder) .the-content-parent > * {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	&.has-page-header.single-jetpack-portfolio article>.page-content {
+		padding-top: 0px;
+	}
+	.vamtam-col-full-height .fl-col-content {
+		min-height: 0;
+	}
+	#sub-header {
+		border-top: none;
+	}
+	.post-article {
+		header {
+			h3 {
+				&, a {
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	.loop-wrapper.news {
+		.post-actions-wrapper {
+
+			.icon {
+				margin-right: 4px;
+				font-size: 11px;
+			}
+
+			.post-date {
+				text-transform: none;
+				margin-right: 0;
+				line-height: 2em;
+				font-size: 0.6em;
+				text-align: center;
+				padding: 0px;
+			}
+		}
+
+		.comment-count {
+			width: 25%;
+
+			a {
+				padding: 5px;
+				text-align: center;
+			}
+		}
+	}
+
+	.sd-social {
+		margin: 0px;
+	}
+
+	.vamtam-main:not(.layout-full) .vamtam-related-content,
+	&:not(.fl-builder) .vamtam-main:not(.layout-full) article,
+	.page-wrapper > aside.left,
+	.page-wrapper > aside.right,
+	&.single-post .single-post-wrapper .post-meta,
+	&.single-post .single-post-wrapper .meta-top {
+		padding-left: calc( 0px + var( --vamtam-beaver-global-module_margins_left ) );
+		padding-right: calc( 0px + var( --vamtam-beaver-global-module_margins_right ) );
+	}
+	.comment {
+		.comment-author {
+			display: none;
+		}
+	}
+
+	&.page-template-guestbook-php .comments .comment {
+		padding: 0px;
+	}
+
+	#commentform .form-submit {
+		margin: 0 !important;
+	}
+
+	h3 .vamtam-button {
+		margin-top: 20px;
+	}
+
+	#sb_instagram {
+		&.sbi_col_3,
+		&.sbi_col_4,
+		&.sbi_col_5,
+		&.sbi_col_6 {
+			#sbi_images .sbi_item {
+				width: 50%;
+			}
+		}
+	}
+
+	blockquote.simple .quote-content {
+		padding: 0%;
+	}
+
+	.vamtam-parallax-bg-img {
+		top: -150px;
+		bottom: -150px;
+	}
+
+	.nf-field-container {
+		width: 100% !important;
+		margin-left: 0px !important;
+	}
+
+	#vamtam-overlay-menu.open .vamtam-overlay-menu-contents {
+		padding: 0px;
+	}
+	.vamtam-overlay-menu-contents .vamtam-overlay-menu-items .mega-menu-wrap {
+		text-align: left !important;
+	}
+
+	#main-footer .fl-row-content-wrap .fl-row-content{
+		padding-bottom: 0px;
+	}
+
+	.vamtam-subscrible .field-wrap input[type="button"] {
+		margin: 5px 0px 0px 0px;
+	}
+
+	.jp-carousel-wrap .jp-carousel-close-hint,
+	.cbp-popup-ready.cbp-popup-lightbox .cbp-popup-close,
+	button.mfp-close:after {
+		right: 10px;
+		top: 10px;
+		margin: 0px;
+	}
+	.fl-module-vamtam-numbers {
+		.fl-number-before-text,
+		.fl-number-after-text {
+			font-size: 1.6em;
+		}
+		.fl-number-int {
+			font-size:0.9em;
+		}
+	}
+	#header-404 {
+		background-position-y: 30px !important;
+		background-size: 100px !important;
+		.line-1 {
+			padding: 50px 0px 0px 0px;
+			font-size: 120px;
+		}
+	}
+	.vamtam-sticky-button {
+		display: none;
+	}
+	.fl-row.vamtam-animation-inside {
+		overflow: hidden;
+	}
+	#simple-instagram-wrap, .simple-instagram-list, li.simple-instagram-list-item {
+		width: 33.333%;
+	}
+	.tribe-events-venue-map {
+		float: none !important;
+		width: auto!important;
+		margin: 0 3%!important;
+	}
+
+	.tribe-tickets-rsvp {
+		.tribe-events-tickets-rsvp {
+			.tribe-ticket.quantity input {
+				padding: 15px 10px 15px 10px;
+				width: 70px;
+				text-align: center;
+			}
+			.tickets_description {
+				padding: 30px 2%;
+			}
+		}
+		.tribe-events-tickets-title.tribe--rsvp{
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-event-cost span {
+		border-radius: var( --vamtam-border-radius ) 0px 0px var( --vamtam-border-radius );
+		padding: 10px;
+		&.tribe-tickets-left {
+			border-radius: 0px var( --vamtam-border-radius ) var( --vamtam-border-radius ) 0px;
+		}
+	}
+
+	.tribe-tickets-left,
+	.tribe-events-list .tribe-events-loop .tribe-event-featured .tribe-events-event-cost .tribe-tickets-left {
+		margin-left: 0px;
+		border: none !important;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+
+	.tribe-events-event-cost {
+		flex-wrap: wrap;
+
+		form {
+			flex-grow: 5;
+		}
+
+		.tribe-button {
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+
+	.bit-widget-container .bit-event {
+		.bit-button {
+			border-color: var( --vamtam-accent-color-1 );
+		}
+		.bit-location,
+		.bit-venue {
+			font-size: calc( var(--vamtam-h5-font-size) - 2px );
+		}
+	}
+
+	//fix for BB setting every cols flex inside a col-group with reversed stacking.
+	.fl-col-group.fl-col-group-responsive-reversed {
+		> .fl-col .fl-col-group:not(.fl-col-group-responsive-reversed) > .fl-col {
+			//this not is for nested reverse cols to still work.
+			order: unset;
+		}
+		.fl-col {
+			flex: 0 1 auto;
+		}
+	}
+}

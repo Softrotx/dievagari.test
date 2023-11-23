@@ -1,0 +1,138 @@
+.booked-calendar-shortcode-wrap {
+	.booked-calendarSwitcher {
+		&.calendar {
+			p:before {
+				top: 10px;
+				right: 5px;
+			}
+			select {
+				width: auto;
+				padding: 10px 5px !important;
+				margin-bottom: 0px;
+				background: none !important;
+			}
+		}
+		&.list select {
+			height: auto;
+		}
+	}
+}
+
+body table.booked-calendar tr.week td.active .date,
+body table.booked-calendar tr.week td.active:hover .date,
+body table.booked-calendar tr.entryBlock,
+body .booked-calendar-wrap.small table.booked-calendar tr.week td.active .date,
+body .booked-calendar-wrap.small table.booked-calendar td.today.active:hover .date span {
+	background: var( --vamtam-accent-color-7 ) !important;
+}
+
+
+body .booked-list-view a.booked_list_date_picker_trigger,
+body #booked-profile-page input[type=submit], body #booked-profile-page button, body .booked-list-view input[type=submit], body .booked-list-view button, body table.booked-calendar input[type=submit], body table.booked-calendar button, body .booked-modal input[type=submit], body .booked-modal button {
+	background: #fff;
+	transition: all .3s ease;
+}
+
+body .booked-calendar-wrap .booked-appt-list .timeslot .timeslot-people button {
+	background: var( --vamtam-accent-color-1 );
+	color: var( --vamtam-accent-color-1-hc );
+}
+
+body .booked-modal button.cancel {
+	background: transparent !important;
+
+	&:hover {
+		border-color: transparent !important;
+	}
+}
+body .booked-list-view a.booked_list_date_picker_trigger:hover,
+body #booked-profile-page input[type=submit]:hover, body #booked-profile-page button:hover, body .booked-list-view input[type=submit]:hover, body .booked-list-view button:hover, body table.booked-calendar input[type=submit]:hover, body table.booked-calendar button:hover, body .booked-modal input[type=submit]:hover, body .booked-modal button:hover {
+	background: var( --vamtam-accent-color-1 );
+	color: var( --vamtam-accent-color-5 );
+	border-color: var( --vamtam-accent-color-1 );
+}
+.booked-appt-list ul.booked-public-appointment-list, .booked-appt-list ul.booked-public-appointment-list li {
+	line-height: 1.4em;
+	font-size: var( --vamtam-primary-font-font-size );
+}
+body #booked-profile-page input[type=submit],
+body #booked-profile-page button,
+body .booked-list-view input[type=submit],
+body .booked-list-view button,
+body table.booked-calendar input[type=submit],
+body table.booked-calendar button,
+body .booked-modal input[type=submit],
+body .booked-modal button {
+	padding: 5px 25px;
+	font-size: 14px;
+}
+body .booked-list-view .booked-list-view-nav button,
+body .booked-list-view a.booked_list_date_picker_trigger {
+	border-radius: calc( var( --vamtam-border-radius ) - 2px );
+}
+#ui-datepicker-div.booked_custom_date_picker table.ui-datepicker-calendar tbody td a {
+	border: none;
+	border-radius: calc( var( --vamtam-border-radius ) - 2px );
+}
+body .booked-modal .bm-window {
+	border-radius: var(--vamtam-border-radius);
+}
+body .booked-modal .bm-window p.booked-title-bar {
+	padding: 20px 30px 20px 30px;
+	border-top-left-radius: var(--vamtam-border-radius) !important;
+	border-top-right-radius: var(--vamtam-border-radius) !important;
+}
+body .booked-modal .bm-window .booked-scrollable {
+	border-radius: var(--vamtam-border-radius);
+}
+body .booked-form .booked-appointments {
+	box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+}
+
+body table.booked-calendar .booked-appt-list {
+	-webkit-box-shadow: 0 1px 30px rgba(0,0,0,0.08);
+	-moz-box-shadow: 0 1px 30px rgba(0,0,0,0.08);
+	box-shadow: 0 1px 30px rgba(0,0,0,0.08);
+}
+body .booked-calendar-wrap.small table.booked-calendar th .monthName a,
+.booked-fea-appt-list .appt-block a.delete {
+	border: var( --vamtam-no-border-link );
+}
+body #booked-profile-page .booked-tabs li .counter {
+	min-width: 20px;
+}
+body #booked-page-form .login-remember {
+	float: none;
+	margin-bottom: 10px;
+}
+body #booked-page-form .login-submit {
+	float: none;
+}
+body .booked-modal .bm-window .close {
+	top: 16px;
+	right: 20px;
+	transition: color .3s ease;
+}
+.backToMonth {
+	border: var( --vamtam-no-border-link );
+}
+
+
+.ui-icon.ui-icon-circle-triangle-w::after,
+.ui-icon.ui-icon-circle-triangle-e::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	text-indent: 0;
+}
+
+.ui-icon.ui-icon-circle-triangle-w::after {
+	content: "\25C0";
+}
+
+.ui-icon.ui-icon-circle-triangle-e::after {
+	content: "\25B6";
+}

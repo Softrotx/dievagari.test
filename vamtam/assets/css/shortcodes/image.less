@@ -1,0 +1,30 @@
+body.layout-full .post-article .post-media .media-inner,
+body.layout-full .portfolio-image-wrapper,
+body.layout-full .portfolio-image-wrapper .vamtam-responsive-wrapper {
+	padding: 0px;
+	border: 0;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	border-radius: var( --vamtam-border-radius );
+	max-width: 900px;
+	margin: auto;
+
+	img {
+		margin: auto;
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.client-logo img {
+		width: auto;
+	}
+}
+body {
+	&:not(.fl-builder) {
+		.post-article .gallery-post-format .post-media .media-inner {
+			overflow: initial;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+#main-footer {
+	.mc4wp-form {
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		input,
+		textarea,
+		select {
+			transition: all .3s;
+			margin: 0px;
+			background: none;
+			font-size: 14px;
+			line-height: 18px;
+			height: 46px;
+			border-color: rgba(255, 255, 255, 0.3);
+			color: var( --vamtam-accent-color-5 );
+		}
+
+		input[type=email] {
+			width: 240px;
+			display: inline-block;
+			vertical-align: top;
+			border-top-left-radius: 50px;
+			border-bottom-left-radius: 50px;
+			border-right: none;
+
+			width: 66%;
+		}
+
+		textarea:hover,
+		input[type=email]:focus {
+			border-color: var( --vamtam-accent-color-1 );
+			border-right: none !important;
+		}
+
+		input[type=submit]{
+			font-size: 12px;
+			line-height: 1em;
+			color: #fff;
+			text-align: center;
+			vertical-align: top;
+			padding: 1em 0em !important;
+			border: solid 1px var( --vamtam-accent-color-1 );
+			background: transparent;
+			border-radius: 0px;
+			border-top-right-radius: 50px;
+			border-bottom-right-radius: 50px;
+
+			width: 34%;
+
+
+			&:hover {
+				background: var( --vamtam-accent-color-1 ) !important;
+			}
+		}
+
+		p {
+			font-size: 11px;
+			color: var( --vamtam-accent-color-3 );
+		}
+	}
+}
+

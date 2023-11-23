@@ -1,0 +1,488 @@
+.fixed-header-box {
+	position: relative;
+	z-index: 10;
+	margin: 0 auto;
+
+	.sticky-header.sticky-header-type-below &,
+	.had-sticky-header.sticky-header-type-below & {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+
+		.admin-bar& {
+			top: 32px;
+		}
+	}
+
+	&.sticky-header-state-stuck {
+		box-shadow: 0 2px 40px 0 rgba(0,0,0,0.05);
+	}
+
+	&.hbox-filler {
+		background: var( --vamtam-header-background-background-image ) center top / var( --vamtam-header-background-background-size ) var( --vamtam-header-background-background-repeat ) var( --vamtam-header-background-background-attachment ) var( --vamtam-header-background-background-color );
+	}
+
+	.logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+
+		.logo {
+			text-decoration: none !important;
+			line-height: 1;
+			display: block;
+			position: relative;
+			border: none;
+
+			img {
+				clear: both;
+				padding: 0;
+				border: 0 !important;
+				vertical-align: bottom;
+
+				body.sticky-header & {
+					width: auto;
+				}
+			}
+
+			&.text-logo {
+				.vamtam-font(logo-);
+				white-space: nowrap;
+				border: var( --vamtam-no-border-link );
+
+				&, &:hover {
+					color: var( --vamtam-logo-color );
+				}
+			}
+		}
+
+		.site-tagline {
+			display: block;
+			padding-top: 5px;
+			color: var( --vamtam-accent-color-1 );
+			font-family: var( --vamtam-additional-font-2-font-family );
+			font-size: 0.9em;
+			line-height: 1em;
+		}
+	}
+}
+
+.header-background {
+	background: var( --vamtam-header-background-background-image ) center top / var( --vamtam-header-background-background-size ) var( --vamtam-header-background-background-repeat ) var( --vamtam-header-background-background-attachment ) var( --vamtam-header-background-background-color );
+
+	margin-top: 0;
+	transition: background .3s ease-out;
+
+	body.sticky-header-type-over.sticky-header .sticky-header-state-reset & {
+		background-color: transparent;
+		background-image: none;
+	}
+}
+
+header.main-header {
+	@menu-height: 49px;
+	padding: 0;
+	box-sizing: border-box;
+
+	.sticky-header-state-stuck & {
+		border-bottom-color: transparent;
+	}
+
+	body.sticky-header-type-over.sticky-header .sticky-header-state-stuck &,
+	body.sticky-header-type-normal & {
+		&:not( .layout-single-row ) {
+			.second-row {
+				background: var( --vamtam-sub-header-background-background-image ) center top / var( --vamtam-sub-header-background-background-size ) var( --vamtam-sub-header-background-background-repeat ) scroll var( --vamtam-sub-header-background-background-color );
+			}
+		}
+	}
+
+	body.sticky-header-type-over.sticky-header .sticky-header-state-reset & .first-row {
+
+		.normal-logo {
+			opacity: 0;
+		}
+
+		.alternative-logo {
+			opacity: 1;
+		}
+	}
+
+	body.sticky-header &:not(.layout-single-row) {
+		transition: background .3s ease-out, border .3s ease-out;
+	}
+
+	body.sticky-header-type-over.sticky-header &.layout-single-row {
+		transition: none;
+	}
+
+	.first-row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: calc( var( --vamtam-header-height ) - @menu-height );
+		box-sizing: border-box;
+
+		.alternative-logo {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX( -50% );
+			opacity: 0;
+		}
+	}
+
+	.second-row {
+		clear: both;
+		min-height: @menu-height;
+		width: 100%;
+
+		.second-row-columns {
+			display: flex;
+			align-items: center;
+			box-sizing: border-box;
+			position : relative;
+			width: 100%;
+		}
+	}
+
+	.header-left {
+		padding: 0;
+		min-width: 160px;
+		white-space: nowrap;
+	}
+
+	.header-center {
+		width: 100%;
+		text-align: center;
+		padding: 0px;
+
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+
+		#megaMenu #megaMenuToggle {
+			position: relative;
+			padding-right: 30px;
+
+			.megaMenuToggle-icon {
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				margin-top: 4px;
+			}
+		}
+	}
+
+	.header-right {
+		position: relative;
+		padding: 0;
+		text-align: right;
+	}
+
+	body.sticky-header-type-over.sticky-header .sticky-header-state-reset & {
+		.vamtam-cart-dropdown-link {
+			.icon,
+			.products {
+				color: var( --vamtam-main-menu-text-sticky-color ) !important;
+			}
+		}
+
+		.vamtam-overlay-menu-toggle {
+			transition: opacity .2s;
+			span.top-line,
+			span.bottom-line,
+			span.middle-line {
+				background: var( --vamtam-main-menu-text-sticky-color );
+			}
+
+			&:hover {
+				opacity: 0.7;
+				span.top-line,
+				span.bottom-line,
+				span.middle-line {
+					background: var( --vamtam-main-menu-text-sticky-color );
+				}
+			}
+		}
+
+		&,
+		.fl-widget a,
+		.logo-tagline .logo,
+		.logo-tagline .site-tagline {
+			color: var( --vamtam-main-menu-text-sticky-color ) !important;
+		}
+
+		#header-text * {
+			--vamtam-accent-color-1: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-2: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-3: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-4: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-5: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-6: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-7: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-accent-color-8: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-body-link-regular: var( --vamtam-main-menu-text-sticky-color );
+			--vamtam-body-link-visited: var( --vamtam-main-menu-text-sticky-color );
+
+			--vamtam-main-menu-text-sticky-color-hc: #000;
+			--vamtam-accent-color-1-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-2-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-3-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-4-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-5-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-6-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-7-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+			--vamtam-accent-color-8-hc: var( --vamtam-main-menu-text-sticky-color-hc );
+		}
+
+		&:not( .layout-overlay-menu ):not( .layout-logo-menu ) .second-row {
+			border-top: 1px solid fade(#fff, 20%);
+		}
+	}
+
+	#header-text {
+		white-space: nowrap;
+		transition: color .3s;
+
+		h4 {
+			margin: 0;
+			line-height: 10px;
+
+			a {
+				font-size: 16px;
+				font-weight: 600;
+				color: var( --vamtam-accent-color-1 );
+
+				&:hover {
+					color: var( --vamtam-accent-color-3 );
+				}
+			}
+		}
+
+		body.sticky-header-type-over.sticky-header .sticky-header-state-reset & {
+			&, p, .icon {
+				color: var( --vamtam-main-menu-text-sticky-color ) !important;
+			}
+		}
+
+		.fl-row-content-wrap {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	button.header-search {
+		padding: 0;
+		border: 0;
+		box-shadow: none;
+		background: none;
+		color: var( --vamtam-accent-color-3 );
+		font-size: 2.1em;
+		height: 2.1em;
+		vertical-align: middle;
+		transition: color 0.3s;
+		font-family: 'theme' !important;
+
+		body.sticky-header-type-over.sticky-header .sticky-header-state-reset & {
+			color: var( --vamtam-main-menu-text-sticky-color );
+		}
+
+		&:hover {
+			color: var( --vamtam-accent-color-1 );
+		}
+	}
+
+	&.layout-standard {
+		.logo {
+			height: auto;
+			display: inline-block;
+		}
+
+		.logo-wrapper {
+			height: calc( var( --vamtam-header-height ) - @menu-height );
+		}
+
+		.first-row {
+			box-sizing: border-box;
+		}
+
+		.second-row {
+			border-top: 1px solid var( --vamtam-default-line-color );
+		}
+
+		.header-left,
+		.header-right {
+			display: block;
+			min-width: 140px;
+			flex: 1 1 100px ;
+		}
+
+		.header-left {
+			justify-content: flex-start;
+
+			&, #header-text {
+				white-space: normal;
+			}
+		}
+
+		.header-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.header-center {
+			display: block;
+			flex: 100 1 auto ;
+		}
+
+		.search-wrapper,
+		.cart-dropdown {
+			display: inline-block;
+		}
+	}
+
+	&.layout-single-row {
+		.header-contents {
+			display: flex;
+			align-items: center;
+		}
+
+		.first-row {
+			width: auto;
+			height: auto;
+			background: transparent;
+			box-sizing: border-box;
+
+			.logo-wrapper {
+				min-height: var( --vamtam-header-height );
+				position: relative;
+				text-align: left;
+			}
+		}
+
+		.second-row {
+			width: auto;
+			flex: 1 1 auto;
+			background: transparent;
+			text-align: right;
+
+			&:last-child #menus {
+				margin-right: -10px;
+			}
+		}
+
+		.search-wrapper,
+		#header-text {
+			padding-left: 30px;
+
+			body.sticky-header-type-over.sticky-header &:last-child {
+				padding-right: 2px;
+			}
+		}
+
+		#header-text {
+			padding-left: 20px;
+		}
+	}
+
+	&.layout-logo-text-menu {
+		.first-row {
+			height: auto;
+			box-sizing: content-box;
+
+			.alternative-logo {
+				left: 0;
+				transform: none;
+			}
+
+			.first-row-right-inner {
+				width: 100%;
+				display: flex;
+				align-items: center;
+			}
+
+			.first-row-left .logo-wrapper,
+			.first-row-right {
+				min-height: calc( var( --vamtam-header-height ) - @menu-height );
+			}
+
+			.first-row-left {
+				.logo-wrapper {
+					text-align: left;
+				}
+			}
+
+			.first-row-right {
+				width: 100%;
+				text-align: right;
+			}
+
+			#header-text {
+				padding: 0;
+				width: 100%;
+
+				> div {
+					padding: 10px 0 10px 40px;
+					text-align: right;
+					margin-left: auto;
+				}
+
+				p {
+					display: inline-block;
+					padding-left: 10px;
+					text-align: left;
+					font-size: 1em;
+
+					strong {
+						font-weight: 500;
+						font-size: 1.2em;
+					}
+				}
+			}
+		}
+
+		.second-row {
+			border-top: 1px solid var( --vamtam-default-line-color );
+
+			#main-menu .menu {
+				text-align: left;
+			}
+
+			.header-center {
+				padding-right: 0;
+				padding-left: 0;
+			}
+
+			.search-wrapper {
+				padding-left: 10px;
+			}
+		}
+	}
+
+	.mobile-top-bar,
+	.mobile-logo-additions {
+		display: none;
+	}
+}
+
+.header-middle {
+	position: relative;
+	z-index: 9;
+	transform: translateZ(0);
+
+	> h5 {
+		padding: 30px 0px 0px 0px;
+	}
+
+	.limit-wrapper {
+		.news.scroll-x  {
+			padding-top: 10px !important;
+		}
+	}
+}

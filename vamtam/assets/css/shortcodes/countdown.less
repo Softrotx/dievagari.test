@@ -1,0 +1,49 @@
+.vamtam-countdown.regular {
+	text-align: center;
+
+	.vamtamc-block {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 40px 20px 20px;
+		border: 1px solid var( --vamtam-default-line-color );
+		border-radius: var( --vamtam-border-radius );
+		width: 140px;
+		text-align: center;
+		margin-right: 10px;
+		margin-left: 10px;
+		box-sizing: border-box;
+
+		.value {
+			font-family: var( --vamtam-h2-font-family );
+			font-size: 40px;
+			font-weight: bold;
+			color: var( --vamtam-accent-color-1 );
+			padding-bottom: 40px;
+		}
+
+		.value-label {
+			border-top: 1px dotted var( --vamtam-default-line-color );
+			padding-top: 20px;
+			text-transform: uppercase;
+		}
+	}
+
+	.vamtamc-sep {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 30px;
+		color: var( --vamtam-accent-color-7 );
+	}
+
+	&.lt300 {
+		.vamtamc-block {
+			margin: 10px 0;
+		}
+	}
+
+	&.lt350 {
+		.vamtamc-sep {
+			display: none;
+		}
+	}
+}

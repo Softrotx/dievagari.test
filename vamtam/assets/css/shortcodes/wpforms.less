@@ -1,0 +1,47 @@
+.wpforms-container.vamtam-one-row {
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+
+	.wpforms-form {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0;
+		background: var( --vamtam-accent-color-8 );
+
+		.wpforms-field-container {
+			display: flex;
+
+			.wpforms-field {
+				width: auto;
+				margin: 0 20px 0 0;
+				padding: 0;
+			}
+		}
+
+		.wpforms-submit-container {
+			padding: 0;
+
+			.wpforms-submit {
+				.button-gen-common();
+				.button-gen-solid();
+
+				&:hover {
+					background: var( --vamtam-accent-color-6 );
+					color: var( --vamtam-accent-color-5 );
+				}
+			}
+		}
+
+		.wpforms-field input,
+		.wpforms-submit {
+			border-radius: var( --vamtam-border-radius-oval );
+			box-sizing: border-box;
+			height: auto;
+			font-size: 14px;
+			line-height: 16px;
+			padding: 16px 32px;
+		    margin-bottom: 15px;
+		}
+	}
+}

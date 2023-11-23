@@ -1,0 +1,215 @@
+body.single-post {
+	&.layout-full:not( .has-blocks ) {
+		@width: 900px;
+
+		.post-content .fl-row-fixed-width,
+		&:not(.fl-builder) .post-content,
+		.single-post-wrapper .meta-top,
+		.single-post-meta-bottom,
+		#main.layout-full .comments-wrapper {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: @width;
+		}
+
+		.post-content .fl-row-fixed-width {
+			max-width: (@width + 80px);
+		}
+	}
+
+	&:not(.fl-builder) {
+		.single-post-meta-wrapper + div {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&.fl-builder .single-post-meta-wrapper + .post-media {
+		margin-top: 30px;
+	}
+
+	&:not(.layout-full) {
+		.single-post-meta-wrapper {
+			padding-top: 30px;
+		}
+
+		#main {
+			border-top: 1px solid var( --vamtam-default-line-color );
+		}
+
+		#sub-header {
+			border-top: 0;
+		}
+
+		.vamtam-body-sidebar {
+			margin-top: 80px;
+		}
+
+		.widget .widgettitle {
+			border-bottom: 0;
+		}
+	}
+
+	.single-post-wrapper .post-content-outer {
+		.fl-row-fixed-width {
+			font-size: calc( var( --vamtam-primary-font-font-size ) + 4px );
+
+			p, ul li {
+				line-height: calc( var( --vamtam-primary-font-line-height ) * 1.2 );
+				font-size: calc( var( --vamtam-primary-font-font-size ) + 4px );
+
+				a {
+					font-size: calc( var( --vamtam-primary-font-font-size ) + 4px );
+				}
+			}
+		}
+
+		.meta-top {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			padding: 0 0 30px 0;
+			font-size: 14px;
+			transition: all .3s ease;
+			border-bottom: 1px solid var( --vamtam-default-line-color );
+			margin: auto;
+
+			.meta-left {
+				display: grid;
+				flex: 1 1 auto;
+				grid-gap: 0 10px;
+
+				&.has-author {
+					grid-template-columns: 50px auto;
+				}
+
+				> div {
+					display: flex;
+					flex-flow: row wrap;
+					align-items: center;
+
+					&:only-of-type {
+						align-self: center;
+						grid-row: span 2/auto;
+					}
+				}
+
+				.meta-left-top {
+					align-self: end;
+				}
+			}
+
+			.avatar {
+				grid-row: span 2/auto;
+				border-radius: 100%;
+			}
+
+			.meta-right {
+				flex: 1 1 auto;
+				display: flex;
+				flex-flow: column;
+			}
+
+			.meta-right {
+				align-items: flex-end;
+
+				.sd-social {
+					padding: 0;
+					margin: 0 -8px;
+				}
+
+				.share-end {
+					display: none;
+				}
+			}
+
+			.comment-count {
+				.icon {
+					position: relative;
+					top: 1px;
+					padding: 0 10px 0 0;
+				}
+			}
+
+			.with-separator {
+				padding-top: 3px;
+				padding-bottom: 2px;
+
+				.vamtam-meta-date {
+					&::before {
+						margin-right: 10px;
+					}
+				}
+
+				> :not(:first-child) {
+					margin-left: 20px;
+				}
+
+			}
+		}
+
+		.author {
+			a {
+				margin-left: 5px;
+				text-transform: uppercase;
+			}
+		}
+
+		.vamtam-meta-tax {
+			padding: 5px 0 0 0;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+
+		.sd-social {
+			border: none;
+		}
+
+		.single-post-meta-bottom {
+			margin: 30px auto 50px auto;
+			clear: both;
+
+			strong {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+.single-post-wrapper {
+	p,
+	.mejs-container {
+		line-height: calc( var( --vamtam-primary-font-line-height ) * 1.2 );
+	}
+}
+
+.vamtam-related-content {
+	clear: both;
+	position: relative;
+	padding-bottom: 30px;
+	border-top: solid 1px var( --vamtam-default-line-color );
+
+	&.related-portfolios {
+		.has-gap {
+			.portfolio-item-wrapper {
+				margin: 0px 10px;
+			}
+		}
+
+		.excerpt {
+			display: none;
+		}
+	}
+
+	.related-content-title {
+		text-align: center;
+		position: relative;
+		margin: 0;
+		padding: 30px 0 20px 0;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

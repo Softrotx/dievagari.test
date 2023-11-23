@@ -1,0 +1,234 @@
+.meta-header {
+	position: relative;
+	background-color: var( --vamtam-default-bg-color ); // in case page title bg is not set
+
+	background: var( --vamtam-page-title-background-background-image ) center top / var( --vamtam-page-title-background-background-size ) var( --vamtam-page-title-background-background-repeat ) scroll var( --vamtam-page-title-background-background-color, transparent );
+
+	border-bottom: solid 1px var( --vamtam-default-line-color );
+
+	.has-breadcrumbs &,
+	.has-share-menu & {
+		> .limit-wrapper {
+			min-height: 30px;
+		}
+	}
+
+	.meta-header-inside {
+		padding: 40px 0px 25px 0px;
+		display: flex;
+		justify-content: center;
+		flex-flow: column;
+
+		.vamtam-meta-tax {
+			order: -1;
+
+			&, a {
+				.vamtam-font( primary-font- );
+			    margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+#sub-header {
+	border-top: 1px solid var( --vamtam-default-line-color );
+	.text-shadow {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: var( --vamtam-accent-color-5-hc );
+		opacity: 0.3;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		animation: vamtam-fadein-title 2s ease-in-out;
+		transition: opacity .5s;
+
+		&.shadow-darkened {
+			opacity: 0.3;
+		}
+	}
+
+	&.has-text-shadow {
+		.page-header {
+			h1, .desc {
+				color: var( --vamtam-accent-color-5 );
+			}
+		}
+
+		.meta-header-inside {
+			border-bottom: 0;
+		}
+	}
+
+	&.has-background {
+		border-top: none;
+		.meta-header-inside {
+			height: 50vh;
+			max-height: 460px;
+			border-bottom: 0;
+		}
+
+		.page-header .page-header-line {
+			border-color: var( --vamtam-accent-color-5 );
+			opacity: .2;
+		}
+	}
+
+	body.header-layout-logo-text-menu &,
+	body.header-layout-standard & {
+		&:not(.has-text-shadow):not(.has-background) {
+			border-top: 1px solid var( --vamtam-default-line-color );
+		}
+	}
+}
+
+body.sticky-header-type-over  .has-background .meta-header:before {
+	display: none;
+}
+
+.page-header {
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 100%;
+
+	body.sticky-header-type-over #main-content:first-child & {
+		padding-top: calc( var( --vamtam-header-height ) - 10px );
+	}
+
+	body.sticky-header-type-over.header-layout-standard #main-content:first-child &,
+	body.sticky-header-type-over.header-layout-logo-text-menu #main-content:first-child & {
+		padding-top: calc( var( --vamtam-header-height ) + @menu-height + 60px );
+	}
+
+	.page-header-line {
+		display: block;
+		width: auto;
+		height: 0;
+	    margin-top: 15px;
+		margin-bottom: 10px;
+		width: 100px;
+		border-bottom: 1px solid var( --vamtam-default-line-color );
+	}
+
+	h1 {
+		margin: 0px;
+		overflow-wrap: break-word;
+		max-width: 100%;
+
+		a {
+			color: var( --vamtam-h1-color );
+		}
+	}
+
+	.desc {
+		font-family: var( --vamtam-primary-font-font-family );;
+		font-size: var( --vamtam-h5-font-size );
+		line-height: 1.1em;
+		font-style: normal;
+		padding-top: 10px;
+	}
+
+	&.layout-centered,
+	&.layout-left-align,
+	&.layout-right-align {
+		flex-direction: column;
+	}
+
+	&.layout-centered {
+		&, + .vamtam-meta-tax {
+			text-align: center;
+		}
+	}
+
+	&.layout-one-row-left,
+	&.layout-one-row-right {
+		justify-content: space-between;
+
+		h1 {
+			flex: 0 1 60%;
+
+			&:last-child {
+				flex-basis: 100%;
+			}
+		}
+
+		.desc {
+			flex: 0 1 40%;
+			margin: 0;
+			align-self: center;
+		}
+	}
+
+	&.layout-one-row-left {
+		align-items: left;
+
+		.page-header-line {
+			margin-right: auto;
+		}
+
+		.desc {
+			text-align: right;
+			margin-left: 50px;
+		}
+	}
+
+	&.layout-one-row-right {
+		align-items: right;
+		flex-direction: row-reverse;
+
+		h1 {
+			text-align: right;
+			margin-left: 50px;
+		}
+
+		.page-header-line {
+			margin-left: auto;
+		}
+
+		+ .vamtam-meta-tax {
+			text-align: right;
+		}
+	}
+
+	&.layout-left-align {
+		align-items: flex-start;
+	}
+
+	&.layout-right-align {
+		align-items: flex-end;
+		text-align: right;
+
+		.desc {
+			text-align: justify;
+			text-align-last: right;
+		}
+
+		+ .vamtam-meta-tax {
+			text-align: right;
+		}
+	}
+}
+
+.single-format-aside .meta-header-inside {
+	min-height: auto;
+	padding: 0px;
+}
+
+body {
+	&.woocommerce,
+	&.single-jetpack-portfolio,
+	&:not(.fl-builder),
+	&.archive {
+		article > .page-content {
+			padding-top: 40px;
+		}
+	}
+	&.single-post {
+		article > .page-content {
+			padding-top: 30px;
+		}
+	}
+}

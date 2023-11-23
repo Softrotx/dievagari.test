@@ -1,0 +1,590 @@
+.jetpack-portfolio .page-content .limit-wrapper {
+	max-width: inherit;
+	padding: 0;
+}
+.portfolios {
+	position: relative;
+	padding: 0;
+	margin: 0;
+
+	.vamtam-cubeportfolio:not(.vamtam-cube-loaded) {
+		.portfolio-image,
+		.portfolio_details {
+			display: none;
+		}
+	}
+
+	.portfolio-items {
+		clear: both;
+	}
+
+	&.has-gap {
+		.portfolio-item-wrapper,
+		.portfolio-item-wrapper .portfolio-image,
+		.portfolio-item-wrapper .portfolio-image .vamtam-responsive-wrapper {
+			border-radius: var( --vamtam-border-radius );
+			overflow: hidden;
+		}
+	}
+
+	.portfolio-item-wrapper {
+		overflow: hidden;
+		border: 0;
+		border: none;
+		background: transparent;
+		background-clip: content-box;
+		text-align: left;
+
+		// This is necessary so that IE11 does not use `display: flex` here due to the flex-direction bugs
+		// (computed height is 0 if flex-direction: column is used)
+		@supports (display: flex) {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.portfolio_details {
+			transform-style: preserve-3d;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			color: var( --vamtam-accent-color-5 );
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			text-align: center;
+			z-index: 10;
+
+			a {
+				height: 100%;
+				z-index: 5;
+				align-content: center;
+				display: flex;
+				flex-direction: row;
+				border: none;
+			}
+
+			.title {
+				margin-top: 0;
+				margin-bottom: 0.2em;
+				font-size: var( --vamtam-h2-font-size );
+				line-height: var( --vamtam-h2-font-size );
+				font-weight: 500;
+				color: var( --vamtam-accent-color-5 );
+				display: inline-block;
+				transition: color 0.35s;
+				width: 100%;
+				flex: 1;
+			}
+
+			.excerpt {
+				margin: 0;
+				color: var( --vamtam-accent-color-5 );
+				line-height: 1.2em;
+				margin: auto;
+				display: inline-block;
+				flex: 1;
+			}
+
+			.link-read-more {
+				margin-top: 10px;
+				.vamtam-font(h5-);
+				font-size: var( --vamtam-primary-font-font-size );
+				display: none;
+			}
+
+			.text-wrapper {
+				width: 100%;
+				z-index: 2;
+				align-content: center;
+			}
+		}
+
+		.portfolio-image {
+			max-height: none !important;
+			background: var( --vamtam-accent-color-6 );
+			position: relative;
+			overflow: hidden;
+			flex: 1;
+			order: 2;
+			transition: background-color .3s ease-out;
+
+			> a {
+				position: relative;
+				display: block;
+				border: none;
+			}
+
+			> a .vamtam-responsive-wrapper img,
+			> .vamtam-responsive-wrapper img {
+				width: 100%;
+				transition: opacity 0.50s, transform 1.20s;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				transform: scale(1.01);
+				border: none;
+			}
+
+			.cbp-slider-wrapper img {
+				transition: opacity .5s ease, transform .5 ease;
+			}
+		}
+	}
+	.hover-animation-1 {
+		.portfolio_details {
+			a {
+				align-items: center;
+			}
+
+			.title {
+				transition: opacity 0.40s, transform 0.40s;
+				transform: translate(0,30px);
+				padding: 0 5%;
+				opacity: 0;
+
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+			.excerpt {
+				padding: 0 10%;
+				transition: opacity 0.50s, transform 0.50s;
+				transform: translate(0,20px) scale(0.9);
+				opacity: 0;
+				color: var( --vamtam-accent-color-5 );
+			}
+		}
+	}
+
+	.hover-animation-2 {
+		.portfolio_details {
+			a {
+				align-items: center;
+			}
+
+			.title {
+				color: var( --vamtam-body-link-regular );
+				transition: opacity 0.40s, transform 0.40s, color 0.40s;
+				transform: translate(0,20px) scale(1.2);
+				padding: 0 5%;
+				opacity: 0;
+
+				&:hover {
+					opacity: 1;
+					color: var( --vamtam-accent-color-1 );
+				}
+			}
+
+			.excerpt {
+				transition: opacity 0.50s, transform 0.50s;
+				transform: translate(0,40px) scale(1.2);
+				padding: 0 3em;
+				color: var( --vamtam-primary-font-color );
+				opacity: 0;
+			}
+		}
+		.portfolio-image {
+			background: rgba( var( --vamtam-accent-color-5-rgb ), 0 );
+
+			> a .vamtam-responsive-wrapper img,
+			> .vamtam-responsive-wrapper img {
+				transform: scale(1.1);
+				opacity: 1;
+			}
+			.cbp-slider-wrapper img {
+				opacity: 1;
+			}
+		}
+	}
+
+	.hover-animation-3 {
+		.portfolio_details {
+			.title {
+				margin-bottom: 0;
+				font-size: 24px;
+				line-height: 1.5em;
+				color: var( --vamtam-body-link-regular );
+
+				&:hover {
+					opacity: 1;
+					color: var( --vamtam-accent-color-1 );
+				}
+			}
+
+			.excerpt {
+				color: var( --vamtam-primary-font-color );
+				padding: 0;
+				opacity: 1;
+			}
+
+			.text-wrapper {
+				display: block;
+				position: absolute;
+				transform: translateY(200%);
+				bottom: 0;
+				background: var( --vamtam-accent-color-5 );
+				padding: 20px 10px 20px 10px;
+				transition: transform 0.3s ease-out;
+			}
+			.portfolio-image {
+				> a .vamtam-responsive-wrapper img,
+				> .vamtam-responsive-wrapper img {
+					transition: 1.0s;
+				}
+			}
+		}
+	}
+
+	.hover-animation-4 {
+		.portfolio_details {
+			height: auto;
+			position: relative;
+			color: inherit;
+			text-align: left;
+
+			.title {
+				opacity: 1;
+				color: inherit;
+				font-size: 24px;
+				border-bottom: solid 1px var( --vamtam-default-line-color );
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				margin-top: 5px;
+				padding-right: 50px;
+			}
+
+			.excerpt {
+				color: inherit;
+				opacity: 1;
+				.vamtam-font(primary-font-);
+				color: var( --vamtam-primary-font-color );
+			}
+
+			a {
+				height: auto;
+			}
+
+			.link-read-more {
+				display: inline-block;
+			}
+
+			.lightbox-wrapper {
+				position: absolute;
+				top: 9px;
+				right: 10px;
+				z-index: 10;
+
+				a {
+					padding: 5px;
+				}
+			}
+		}
+	}
+
+	.no-title.no-description .portfolio-item-wrapper {
+		border: 0;
+	}
+
+	.state-open {
+		.portfolio-item-wrapper {
+			background: var( --vamtam-default-bg-color );
+		}
+
+		&.hover-animation-1,
+		&.hover-animation-2 {
+			.title, .excerpt {
+				transform: translate(0, 0);
+				opacity: 1;
+			}
+		}
+
+		&.hover-animation-1 {
+			.portfolio-image {
+				> a .vamtam-responsive-wrapper img,
+				> .vamtam-responsive-wrapper img {
+					opacity: 0.4;
+					transform: scale(1.10);
+				}
+
+				.cbp-slider-wrapper img {
+					opacity: 0.2;
+				}
+			}
+
+			.portfolio_details {
+				transform: scale( 1 );
+
+				&:before,
+				&:after {
+					opacity: 0;
+					transform: scale(1);
+				}
+			}
+		}
+
+		&.hover-animation-2 {
+			.portfolio-image {
+				background: var( --vamtam-accent-color-5 );
+
+				> a .vamtam-responsive-wrapper img,
+				> .vamtam-responsive-wrapper img,
+				.cbp-slider-wrapper img {
+					transform: scale(1);
+					opacity: 0;
+				}
+			}
+		}
+
+		&.hover-animation-3 {
+			.portfolio-image {
+				> a .vamtam-responsive-wrapper img,
+				> .vamtam-responsive-wrapper img,
+				.cbp-slider-wrapper img  {
+					transform: translate(0, -10px) scale(1.1);
+				}
+			}
+
+			&.no-title.no-description {
+				.portfolio-image {
+					> a .vamtam-responsive-wrapper img,
+					> .vamtam-responsive-wrapper img {
+						transform: translate(0, -10px) scale(1.06);
+					}
+				}
+			}
+
+			.text-wrapper {
+				transform: translateY(0%);
+			}
+		}
+
+		&.hover-animation-4 {
+			.portfolio-image {
+				> a .vamtam-responsive-wrapper img,
+				> .vamtam-responsive-wrapper img {
+					transform: scale(1.10);
+				}
+			}
+		}
+	}
+}
+
+.portfolio-filters {
+	z-index: 6;
+	text-align: center;
+	margin-bottom: 30px;
+	padding-top: 10px;
+
+	.inner-wrapper {
+		display: inline-block;
+		text-align: center;
+		line-height: 35px;
+		margin-bottom: -1px;
+
+		.cbp-filter-item {
+			display: inline-block;
+			margin: 0 .5em;
+			color: var( --vamtam-accent-color-2 );
+			font-family: var( --vamtam-primary-font-font-family );
+			transition: all .3s;
+			line-height: normal;
+			cursor: pointer;
+			border: none;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 0;
+			text-align: center;
+
+			&:hover{
+				color: var( --vamtam-body-link-hover );
+			}
+			&.cbp-filter-item-active  {
+				color: var( --vamtam-body-link-hover );
+				text-decoration: line-through;
+			}
+		}
+	}
+
+	header.page-header & {
+		padding-bottom: 10px;
+
+		&.portfolio-filters {
+			padding: 0;
+		}
+
+		.cbp-filter-item:first-child {
+			margin-left: 0;
+			padding-left: 0;
+		}
+	}
+
+	.cbp-search {
+		display: inline-block;
+		margin-top: 15px;
+
+		&:hover .cbp-search-icon {
+			opacity: 1;
+		}
+
+		.cbp-search-icon {
+			opacity: 0;
+			transition: opacity .5s ease-out;
+		}
+
+		.cbp-search-input {
+			font-size: 12px;
+			margin: 0;
+			font-family: var( --vamtam-primary-font-color );
+			border-color: transparent;
+			transition: all .5s ease-out;
+			text-align: center;
+			padding: 5px;
+
+			&:hover {
+				border-color: rgba(0, 0, 0, 0.1);
+				color: var( --vamtam-accent-color-6 );
+			}
+		}
+	}
+
+	.cbp-l-filters-alignCenter .cbp-filter-counter {
+		background-color: var( --vamtam-accent-color-1 );
+		color: var( --vamtam-accent-color-1-hc );
+		font-size: 11px;
+		font-weight: bold;
+
+		&:after {
+			border-top-color: var( --vamtam-accent-color-1 ) !important;
+		}
+	}
+}
+
+.portfolios.scroll-x {
+	.portfolio-items {
+		.vamtam-project {
+			&.has-title.no-description {
+				margin-bottom: 20px !important;
+			}
+		}
+	}
+}
+
+article.type-jetpack-portfolio {
+
+	&.left-right,
+	&.right-only {
+		.portfolio-text-content .portfolio-content {
+			> .project-meta {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.portfolio-image-wrapper {
+		margin-top: 30px;
+	}
+
+	.project-main-content {
+		margin: auto;
+	}
+
+	.client-logo {
+		text-align: center;
+		height: auto;
+		z-index: 999;
+		margin-top: -80px;
+		position: relative;
+
+		span{
+			background: var( --vamtam-accent-color-5 );
+			width: 110px;
+			height: 110px;
+			border-radius: 100%;
+			display: block;
+			margin: auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 60%;
+		}
+	}
+
+	&.video .client-logo{
+		position: relative;
+		padding: 1% 2% 0% 2%;
+	}
+
+	.portfolio-text-content {
+		.portfolio-content {
+			margin: 0;
+			margin-bottom: 0;
+
+			> .project-meta {
+				position: relative;
+				padding-top: 40px;
+				text-align: center;
+
+				p.posted_in {
+					margin: 0;
+					a {
+						font-family: var( --vamtam-additional-font-1-font-family );
+						font-size: 24px;
+						display: inline-block;
+
+						&:hover {
+							color: var( --vamtam-body-link-hover );
+						}
+
+						&:after {
+							content: ",";
+						}
+
+						&:last-child {
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+				.meta-top {
+					padding-top: 10px;
+					padding-bottom: 40px;
+					color: var( --vamtam-accent-color-3 );
+					font: var(--vamtam-h6-font-weight) var(--vamtam-h6-font-size)/var(--vamtam-h6-line-height) var(--vamtam-h6-font-family);
+				}
+			}
+			.tagged_as {
+				text-align: center;
+				padding-top: 20px;
+
+				span.icon {
+					width: auto;
+					display: inline-block;
+					padding-right: 5px;
+					margin: 10px 0 12px 0;
+					color: var( --vamtam-accent-color-3 );
+					font-size: 18px;
+					vertical-align: middle;
+				}
+
+				a {
+					display: inline-block;
+					margin: 0 5px 5px 5px;
+					font-size: var( --vamtam-primary-font-font-size );
+					font-family: var( --vamtam-primary-font-font-family );
+					transition: all .3s ease;
+					color: var( --vamtam-accent-color-3 );
+
+					&:hover {
+						color: var( --vamtam-body-link-hover );
+					}
+				}
+			}
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+}
+.archive .portfolio_details .lightbox-wrapper {
+	display: none;
+}

@@ -1,0 +1,382 @@
+// this is copied from cubeportfolio.css, so that we can lazyload cube's styles
+.cbp>* {
+	visibility: hidden;
+}
+
+.vamtam-cubeportfolio {
+	.cbp-nav-next,
+	.cbp-nav-prev {
+		border-radius: var( --vamtam-border-radius-oval );
+	}
+
+	&.cbp-slider-edge {
+		&.vamtam-cube-narrow {
+			.cbp-nav {
+				display: none;
+			}
+
+			.cbp-wrapper {
+				position: relative;
+				margin: auto;
+			}
+		}
+
+		.cbp-nav-prev,
+		.cbp-nav-next {
+			color: var( --vamtam-accent-color-5-hc );
+			background: var( --vamtam-accent-color-5 );
+			width: 56px;
+			height: 56px;
+			text-align: center;
+			transition: all .3s;
+			box-shadow: -3px 2px 4px 0px rgba(0,0,0,0.1);
+
+			&:after {
+				font-size: 24px;
+				line-height: 32px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+			}
+
+			&:hover {
+				opacity: 1;
+				color: var( --vamtam-accent-color-1-hc );
+				background: var( --vamtam-accent-color-1 );
+				border-color: var( --vamtam-accent-color-1 );
+			}
+		}
+
+		.cbp-nav-prev {
+			left: 30px;
+			box-shadow: 3px 2px 4px 0px rgba(0,0,0,0.1);
+
+			&:after {
+				content: icon( vamtam-theme-arrow-left-sample);
+			}
+		}
+
+		.cbp-nav-next {
+			right: 30px;
+
+			&:after {
+				content: icon( vamtam-theme-arrow-right-sample);
+			}
+		}
+
+		.cbp-nav-pagination {
+			bottom: -30px;
+		}
+
+		.cbp-nav-pagination-item {
+			margin: 0px 5px;
+			width: 12px;
+			height: 12px;
+			transition: all 0.3s ease;
+			border: none;
+			background: rgba( 0, 0, 0, .2 );
+		}
+
+		.cbp-nav-pagination-item:hover {
+			opacity: 1;
+			background-color: var( --vamtam-accent-color-3 );
+		}
+
+		.cbp-nav-pagination-active {
+			background-color: var( --vamtam-accent-color-3 );
+			opacity: 1;
+		}
+	}
+
+	.cbp-slider-inline {
+		.cbp-slider-next,
+		.cbp-slider-prev {
+			background: transparent;
+			float: none;
+			color: var( --vamtam-accent-color-5 );
+			border-radius: var( --vamtam-border-radius-oval );
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			text-align: center;
+			width: 50px;
+			height: 50px;
+			transition: background .2s ease;
+
+			&:after {
+				font-size: 28px;
+				line-height: 33px;
+				width: 32px;
+				height: 32px;
+				font-style: normal;
+				background: none;
+				font-family: theme;
+				border-radius: 20em;
+			}
+
+			&:hover {
+				color: var( --vamtam-accent-color-1 );
+				background: var( --vamtam-accent-color-5 );
+			}
+		}
+
+		.cbp-slider-next {
+			left: auto;
+			right: 20px;
+
+			&:after {
+				content: icon( vamtam-theme-arrow-right-sample);
+			}
+		}
+
+		.cbp-slider-prev:after {
+			content: icon( vamtam-theme-arrow-left-sample);
+			padding-left: 0px;
+		}
+	}
+
+	.cbp-slider-controls {
+		left: 0;
+		top: 50%;
+		margin-top: -25px;
+		z-index: 10;
+		width: 100%;
+		position: absolute;
+	}
+
+	+ .thumbnails {
+		.cbp-pagination-item {
+			border: 0;
+			transition: all .3s ease-out;
+			margin-top: 0;
+			margin-right: 0;
+			display: block;
+
+			&:after {
+				background: rgba(255, 255, 255, 0.5);
+			}
+		}
+
+		.cbp-pagination-active .cbp-pagination-item,
+		.cbp-pagination-item:hover {
+			&:after {
+				background: transparent;
+			}
+		}
+	}
+}
+
+.cbp-item.vamtam-project:hover{
+	.cbp-slider-next,
+	.cbp-slider-prev {
+		background: var( --vamtam-accent-color-1 );
+		color: var( --vamtam-accent-color-1-hc );
+		left: 5px;
+		border: transparent;
+		transition: all .3s ease;
+
+		&:hover {
+			background: var( --vamtam-accent-color-5 );
+			color: var( --vamtam-accent-color-1 );
+		}
+	}
+	.cbp-slider-next {
+		left: auto;
+		right: 5px;
+	}
+}
+
+.vamtam-cubeportfolio.cbp-mode-slider {
+	.cbp-nav-prev {
+		left: -30px;
+
+		.jetpack-portfolio .page-content & {
+			left: 30px;
+		}
+	}
+
+	.cbp-nav-next {
+		right: -30px;
+
+		.jetpack-portfolio .page-content & {
+			right: 30px;
+		}
+	}
+
+	.cbp-nav-controls {
+		opacity: 0;
+	}
+
+	&:hover .cbp-nav-controls {
+		opacity: 1;
+	}
+}
+
+.fl-module-vamtam-blog,
+.vamtam-related-content.related-posts {
+	.vamtam-cubeportfolio {
+		.cbp-nav-prev {
+			left: -20px;
+		}
+
+		.cbp-nav-next {
+			right: -20px;
+		}
+	}
+}
+
+.gallery-post-format .media-inner .vamtam-cubeportfolio {
+	.cbp-nav-next {
+		right: 30px;
+	}
+	.cbp-nav-prev {
+		left: 30px;
+	}
+}
+
+@media screen and (any-pointer: coarse) {
+	.vamtam-cubeportfolio {
+		&.cbp-mode-slider:not(.vamtam-testimonials-slider) {
+			padding-bottom: 40px;
+			box-sizing: content-box;
+
+			.cbp-nav-pagination {
+				display: block;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+@media not screen and (any-pointer: coarse) {
+	.vamtam-cubeportfolio {
+		&.cbp-mode-slider:not(.vamtam-testimonials-slider) {
+			.cbp-nav-pagination {
+				display: none;
+			}
+		}
+	}
+}
+
+.vamtam-cubeportfolio.cbp,
+.cbp-lazyload,
+.cbp-popup-loadingBox,
+.cbp-popup-singlePageInline {
+	&:after {
+		animation: none !important;
+		border: 0 !important;
+		content: var( --vamtam-loading-animation ) !important;
+		width: 70px !important;
+		height: 70px !important;
+	}
+}
+.cbp-popup-wrap {
+	&.cbp-popup-singlePage {
+		.cbp-popup-content {
+			max-width: none;
+			margin-top: 60px;
+			width: 100%;
+
+			article.type-jetpack-portfolio .portfolio-image-wrapper {
+				margin: auto;
+			}
+		}
+	}
+
+	.cbp-popup-lightbox-img,
+	.cbp-popup-lightbox-iframe iframe {
+		box-shadow: none;
+	}
+}
+
+body .cbp-popup-singlePage { // keep the body selector, increases the specificity
+	.cbp-popup-navigation-wrap {
+		background-color: var( --vamtam-accent-color-5 );
+		border-bottom: solid 1px var( --vamtam-accent-color-7 );
+		height: 70px;
+	}
+
+	.cbp-popup-singlePage-counter {
+		color: var( --vamtam-accent-color-3 );
+	}
+
+	.cbp-popup-next,
+	.cbp-popup-prev,
+	.cbp-popup-close {
+		background: none !important;
+		text-align: center;
+
+		&:after {
+			transition: all .3s ease;
+			font-family: 'theme';
+			font-size: 2.6em;
+			vertical-align: middle;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			color: var( --vamtam-accent-color-1 );
+			display: block;
+			width: 50px;
+			height: 45px;
+		}
+
+		&:hover:after {
+			color: var( --vamtam-accent-color-6 );
+		}
+	}
+
+}
+.cbp-popup-close:after {
+	content: icon( vamtam-theme-close-sample);
+	font-size: 2.4em;
+}
+
+.cbp-popup-next:after {
+	content: icon( vamtam-theme-arrow-right-sample);
+}
+
+.cbp-popup-prev:after {
+	content: icon( vamtam-theme-arrow-left-sample);
+}
+
+
+body .cbp-popup-lightbox,
+.mfp-bg {
+	background: var( --vamtam-overlay-color );
+	opacity: 1;
+}
+
+
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-next,
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-prev,
+body .cbp-popup-ready.cbp-popup-lightbox .cbp-popup-close {
+	background: var( --vamtam-overlay-color );
+	text-align: center;
+	background: none;
+	width: 70px;
+	height: 70px;
+
+	&:after {
+		transition: all .3s ease;
+		font-family: 'theme';
+		font-size: 1.7em;
+		vertical-align: middle;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		display: block;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		padding: 10px;
+		border-radius: var( --vamtam-border-radius-oval );
+		border: none;
+		color: var( --vamtam-overlay-color-hc );
+		background: var( --vamtam-overlay-color );
+	}
+
+	&:hover:after {
+		color: var( --vamtam-accent-color-1-hc );
+		background: var( --vamtam-accent-color-1 );
+	}
+}

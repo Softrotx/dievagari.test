@@ -1,0 +1,33 @@
+.customize-control-vamtam-typography {
+	select {
+		width: 100%;
+	}
+
+	.sizes {
+		input {
+			width: calc( ~"98% - 1em" );
+		}
+	}
+
+	.variant-color,
+	.sizes {
+		display: flex;
+
+		> div {
+			width: 50%;
+
+			&:first-child {
+				padding-right: 1em;
+			}
+		}
+	}
+
+	.wp-picker-open + .wp-picker-input-wrap {
+		display: block;
+	}
+
+	em {
+		display: block;
+		margin-top: 1em;
+	}
+}

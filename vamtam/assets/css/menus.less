@@ -1,0 +1,242 @@
+@menu-height: 60px;
+
+#menus {
+	position: relative;
+	z-index: 210;
+	min-height: @menu-height;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	#main-menu ul.mega-menu li.menu-item-gtranslate {
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 10px;
+	}
+}
+
+#main-menu {
+	width: 100%;
+
+	.menu {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+
+		.header-layout-standard & {
+			justify-content: center;
+		}
+
+		> .menu-item {
+			padding: 0 15px;
+			color: var( --vamtam-primary-font-color );
+
+			a {
+				font-weight: 600;
+			}
+
+			.second-row:last-child &:last-child {
+				padding-right: 0;
+			}
+
+			&.current-menu-item,
+			&.current_page_item,
+			&.current-menu-ancestor,
+			&.current-menu-parent,
+			&.current_page_parent,
+			&.current_page_ancestor {
+				> a {
+					color: var( --vamtam-body-link-hover );
+				}
+			}
+
+			.sub-menu {
+				position: absolute;
+				top: 0px;
+				left: -10px;
+				width: 180px;
+				text-align: left;
+				background: #fff;
+				box-sizing: border-box;
+				transform: translateX( -10px );
+				text-transform: none;
+				z-index: 200;
+				box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.1);
+
+				a {
+					font-weight: normal;
+					display: block;
+					padding: 8px 20px;
+					border-bottom: solid 1px var( --vamtam-default-line-color );
+
+					&:hover {
+						background: var( --vamtam-accent-color-2 );
+						color: var( --vamtam-accent-color-2-hc ) !important;
+					}
+				}
+			}
+
+			&:hover {
+				>.sub-menu-wrapper {
+					position: relative;
+
+					> .sub-menu {
+						display: block;
+						margin: 0 auto auto 0;
+					}
+				}
+			}
+
+			.sub-menu .menu-item {
+				padding: 5px;
+
+				&:hover > .sub-menu-wrapper > .sub-menu {
+					display: block;
+					left: 100%;
+				}
+				&.current-menu-item,
+				&.current_page_item,
+				&.current-menu-ancestor,
+				&.current-menu-parent,
+				&.current_page_parent,
+				&.current_page_ancestor {
+					> a {
+						color: var( --vamtam-body-link-hover );
+					}
+				}
+			}
+		}
+	}
+}
+
+#vamtam-overlay-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1000;
+	background: var( --vamtam-accent-color-5 );
+	transform: translateX( 100% );
+	will-change: transform;
+	transition: transform 0.75s cubic-bezier(0.75, 0.19, 0.24, 1);
+	overflow-y: auto;
+
+	&.open {
+		transform: translateX( 0 );
+
+		.vamtam-overlay-menu-contents {
+			opacity: 1;
+			transform: translateX( 0 );
+			transition: 0.7s 0.65s;
+		}
+	}
+
+	.mega-menu-toggle {
+		display: none !important;
+	}
+}
+
+.vamtam-overlay-menu-toggle-wrapper {
+	margin-left: 15px;
+}
+
+.vamtam-overlay-menu-toggle {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	text-indent: -9999px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	border: none;
+	cursor: pointer;
+	transition: background 0.3s;
+	background-color: transparent;
+	border-radius: 60px;
+	z-index: 9999;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		background: transparent;
+		border-color: transparent;
+
+		span:not(.lines-wrapper) {
+			background: var( --vamtam-accent-color-1 );
+		}
+	}
+
+	span {
+		&.lines-wrapper {
+			position: absolute;
+			top: 19px;
+			left: 10px;
+			right: 10px;
+			height: 2px;
+			border-radius: var( --vamtam-border-radius );
+		}
+
+		&.middle-line {
+			display: block;
+			width: 100%;
+			height: 2px;
+			border-radius: var( --vamtam-border-radius );
+			background: var( --vamtam-accent-color-6 );
+			transition: background .2s ease-out 0s, opacity 0s .0s;
+		}
+
+		&.top-line,
+		&.bottom-line {
+			position: absolute;
+			display: block;
+			right: 0;
+			width: 100%;
+			height: 2px;
+			background-color: var( --vamtam-accent-color-6 );
+			border-radius: var( --vamtam-border-radius );
+			content: "";
+			transition-duration: .3s, .3s, .3s;
+			transition-timing-function: linear, linear, ease-out;
+		}
+
+		&.top-line {
+			top: -6px;
+			transition-property: top, transform, background;
+		}
+
+		&.bottom-line {
+			bottom: -6px;
+			transition-property: width, bottom, transform, background;
+		}
+	}
+
+	&.is-active {
+		background-color: var( --vamtam-default-bg-color );
+
+		span {
+			&.middle-line {
+				opacity: 0;
+			}
+
+			&.top-line {
+				top: 0;
+				transform: rotate(45deg);
+			}
+
+			&.bottom-line {
+				bottom: 0;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+}

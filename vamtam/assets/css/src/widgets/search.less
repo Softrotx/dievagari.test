@@ -1,0 +1,75 @@
+.widget_search .searchform,
+.widget_product_search  .woocommerce-product-search {
+	@size: 55px;
+	position: relative;
+
+	display: block;
+	padding: 0 !important;
+	max-width: 100% !important;
+	width: 100%;
+	white-space: nowrap;
+
+	&:not( :first-child ) {
+		margin-top: 20px;
+	}
+
+	input[name="s"] {
+		width: 100% !important;
+		height: ( @size - 10px );
+
+		border-color: var( --vamtam-accent-color-7 );
+		transition: all .3s;
+		padding: 5px 65px 5px 20px;
+		border-radius: 10em;
+
+		-webkit-appearance: none;
+
+		&:focus {
+			border-color: var( --vamtam-accent-color-7 );
+		}
+	}
+
+	[type="submit"] {
+		position: absolute;
+		z-index: 5;
+		padding: 0px;
+		width: ( @size + 5px );
+		height: ( @size - 10px );
+		background: transparent;
+		box-shadow: none;
+		text-indent: -200px;
+		font-size: inherit !important;
+		border: 1px solid transparent;
+
+		top: 0px;
+		right: 0px;
+
+		border-radius: 0px;
+		border-top-right-radius: 10em;
+		border-bottom-right-radius: 10em;
+		color: transparent;
+	}
+
+	&:before {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 6;
+		padding-right: 5px;
+		margin: 0;
+		width: @size;
+		height: ( @size - 10px );
+		content: icon( vamtam-theme-search-clean);
+		font: normal 20px/44px theme;
+		cursor: pointer;
+		text-align: center;
+		border: none;
+		transition: all .3s;
+		pointer-events: none;
+	}
+
+	&:hover:before {
+		color: var( --vamtam-accent-color-1 );
+	}
+}
+

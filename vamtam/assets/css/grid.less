@@ -1,0 +1,46 @@
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: block; /* 2 */
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.clearboth {
+	clear: both;
+}
+
+.clearfix {
+	clear: both;
+	.clearfix();
+}
+
+.boxed {
+	#header-slider-container,
+	.limit-wrapper {
+		.ls-container,
+		.rev_slider_wrapper {
+			max-width: 100%;
+		}
+	}
+
+	#header-slider-container .rev_slider_wrapper {
+		left: 0 !important;
+
+		.tp-leftarrow.default {
+			left: 30px !important;
+		}
+
+		.tp-rightarrow.default {
+			right: 30px !important;
+		}
+	}
+}
+
+body.full article .ls-container {
+	max-width: 100%;
+}

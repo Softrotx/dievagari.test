@@ -1,0 +1,118 @@
+.additional-space-after-dividers() {
+	+ .frame-fl {
+		margin-top: calc( var( --vamtam-vertical-padding ) / 2 );
+	}
+}
+
+.sep-text {
+	.additional-space-after-dividers();
+	position: relative;
+	margin: 30px 0 30px 0;
+	text-align: center;
+
+	.content,
+	.sep-text-more {
+		display: table-cell;
+		vertical-align: middle;
+		white-space: nowrap;
+
+		* {
+			margin: 0;
+			line-height: 1;
+		}
+
+		h6 {
+			color: var( --vamtam-accent-color-1 );
+			font-family: var( --vamtam-additional-font-2-font-family );
+			font-size: 1em;
+			letter-spacing: 0.3em;
+			padding-top: 10px;
+		}
+
+		h6:before,
+		h6:after {
+			display: inline-block;
+			width: auto;
+			height: 15px;
+			content: "~";
+			font-size: 1.2em;
+			padding: 0px 5px;
+		}
+	}
+
+	.content {
+		padding-right: .7em;
+		padding-left: .7em;
+	}
+
+	.sep-text-before,
+	.sep-text-after {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+		text-align: right;
+	}
+
+	.sep-text-after {
+		text-align: left;
+	}
+
+	.sep-text-line {
+		display: inline-block;
+		width: 30%;
+		border-top: 0 solid;
+		border-bottom: 1px solid;
+		color: var( --vamtam-default-line-color );
+		vertical-align: baseline;
+	}
+
+	&.centered {
+		.sep-text-before,
+		.sep-text-after {
+			width: 50%;
+			font-size: 10px;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: var( --vamtam-small-padding );
+	}
+}
+
+.vamtam-heading {
+	display: block;
+	align-items: center;
+	justify-content: space-between;
+
+	.vamtam-heading-line {
+		flex: 100 1 auto;
+		border-bottom: 1px solid var( --vamtam-default-line-color );
+		margin-top: 10px;
+
+
+		&-left {
+			display: none;
+		}
+
+		&-right {
+			display: block !important;
+		}
+	}
+
+	> a {
+		flex: 0 1 auto;
+	}
+}
+
+.fl-builder-edit {
+	.fl-module-vamtam-separator {
+		min-height: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		> .fl-module-content {
+			flex: 0 1 100%;
+		}
+	}
+}

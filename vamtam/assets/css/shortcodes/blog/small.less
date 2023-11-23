@@ -1,0 +1,277 @@
+.loop-wrapper.news {
+	.post-media {
+		-webkit-mask-image: -webkit-radial-gradient(white, black);
+		background: none;
+		position: relative;
+		overflow: hidden;
+		max-width: 100%;
+		padding: 0px;
+
+		.thumbnail {
+			img {
+				transition: all 0.7s ease-out;
+			}
+		}
+	}
+
+	.post_format-post-format-audio {
+		&,
+		> div,
+		.post-article,
+		.post-media {
+			overflow: visible !important; // all this is just to show the mejs time floater on audio posts
+		}
+
+		.post-media {
+			margin-bottom: 30px;
+		}
+
+		.post-article .mejs-container {
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+
+	}
+
+	.format-quote.list-item > div:before {
+		font-family: theme;
+		content: icon( vamtam-theme-quote);
+		font-size: 4em;
+		line-height: 1em;
+		display: block;
+		color: var( --vamtam-accent-color-6 );
+		border-bottom: solid 1px var( --vamtam-accent-color-7 );
+		padding-left: 25px;
+		padding-top: 10px;
+		padding-bottom: 5px;
+	}
+
+	.post-article {
+		overflow: hidden;
+		margin: 0;
+
+		&:hover {
+			.image-post-format,
+			.as-image {
+			   .thumbnail {
+					img {
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+			}
+			.cbp-slider-controls {
+				opacity: 1 !important;
+			}
+		}
+
+		.post-content-wrapper {
+			padding: 0 30px 30px 30px;
+		}
+
+		.post-content-outer {
+			padding-bottom: 10px;
+
+			p {
+				.vamtam-font(primary-font-);
+				font-size: inherit;
+				margin: 0;
+				padding: 20px 30px;
+			}
+		}
+
+		blockquote {
+			border: none;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.quote-post-format {
+			.cite {
+				padding: 0px 30px 20px 30px;
+				color: var( --vamtam-accent-color-3 );
+
+				&:before {
+					content: "–";
+					padding-right: 5px;
+					color: var( --vamtam-accent-color-3 );
+				}
+
+				a {
+					color: var( --vamtam-accent-color-3 );
+
+					&:hover {
+						color: var( --vamtam-body-link-hover );
+					}
+				}
+
+				img {
+					display: inline-block;
+					margin-bottom: 0;
+					padding: 0 20px 0 0;
+					max-width: 85px;
+					border: 0;
+					vertical-align: middle;
+
+					+ .quote-author {
+						display: inline;
+						vertical-align: middle;
+					}
+				}
+
+				+ .quote-text {
+					padding-left: 0;
+				}
+			}
+
+			.quote-text p {
+				font-family: var( --vamtam-h4-font-family );
+				font-size: var( --vamtam-h4-font-size );
+				line-height: var( --vamtam-h4-line-height );
+				color: var( --vamtam-body-link-regular );
+				margin-top: 0px !important;
+				margin-bottom: 0px !important;
+			}
+		}
+	}
+
+	.post-content-meta {
+		.the-categories,
+		.vamtam-meta-tax {
+			a {
+				.vamtam-font(h5-);
+				margin-bottom: 5px;
+			}
+		}
+
+		.the-tags {
+			padding-bottom: 10px;
+
+			a {
+				.vamtam-font(h6-);
+				font-weight: 400;
+			}
+		}
+
+		a {
+			transition: all .3s ease;
+			display: inline-block;
+			border: none;
+
+			&:hover {
+				color: var( --vamtam-body-link-hover );
+			}
+		}
+	}
+
+
+	.list-item {
+		padding: 10px;
+
+		&.sticky > div {
+			border-bottom: 10px solid var( --vamtam-accent-color-1 );
+			padding-bottom: 30px;
+		}
+
+		header.single {
+			position: relative;
+			z-index: 10;
+
+			h3 {
+				margin-top: 0px;
+				overflow-wrap: break-word;
+			}
+		}
+
+		> div {
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+			transition: box-shadow .3s ease-out;
+			box-shadow: 0px 1px 15px 0px rgba(0,0,0,0.07);
+
+
+			&:hover {
+				.post-media .thumbnail img {
+					transform: scale(1.04);
+				}
+			}
+		}
+	}
+
+	.thumbnail {
+		position: relative;
+		overflow: visible;
+		width: 100%;
+		text-align: center;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		.icon {
+			@icon-size: 65px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: inline-block;
+			width: @icon-size;
+			height: @icon-size;
+			color: var( --vamtam-accent-color-5 );
+			font-size: @icon-size;
+			margin: -@icon-size/2 0 0 -@icon-size/2;
+			opacity: 0;
+		}
+	}
+
+	.post-actions-wrapper {
+		padding: 0px 30px 10px 0px;
+	}
+
+	.sep-text-after {
+		display: none;
+	}
+
+	.image-post-format,
+	.video-post-format.as-image,
+	.standard-post-format.as-image {
+		.thumbnail {
+			overflow: hidden;
+		}
+	}
+
+	> .page-content {
+		margin-bottom: 20px;
+	}
+}
+
+.archive .loop-wrapper.news .list-item > div {
+	border-color: var( --vamtam-default-line-color );
+}
+
+.vamtam-related-content,
+.type-featured {
+	.loop-wrapper.news {
+		.post-content-outer p,
+		.post-content-meta {
+			display: none;
+		}
+
+		.thumbnail img {
+			min-height: 160px;
+			object-fit: cover;
+		}
+
+		.aside-post-format, .format-link, .format-quote {
+			.post-content-outer p {
+				display: block;
+			}
+		}
+
+		.list-item > div {
+			margin-bottom: 10px;
+		}
+	}
+}
+

@@ -1,0 +1,49 @@
+.fl-module-vamtam-pricing-table {
+	.fl-pricing-table {
+		.fl-pricing-table-inner-wrap {
+
+			h2 {
+				line-height: 1.6em;
+				border-bottom: solid 1px var( --vamtam-default-line-color );
+				padding: 25px 0px !important;
+			}
+			.fl-pricing-table-price {
+				padding: 50px 0px !important;
+				line-height: initial;
+				font-weight: 500;
+
+				.fl-pricing-table-duration {
+					font-weight: 400;
+				}
+			}
+			.fl-pricing-table-features {
+				margin-top: 0px;
+				margin-bottom: 0px;
+				li {
+					text-align: center;
+					border-color: var( --vamtam-default-line-color );
+				}
+			}
+			.vamtam-button-wrap {
+				border-top: solid 1px var( --vamtam-default-line-color );
+				padding-top: 25px;
+			}
+		}
+
+		&.fl-pricing-table-rounded {
+			.fl-pricing-table-inner-wrap  {
+				overflow: hidden;
+				border-radius: 6px !important;
+			}
+		}
+	}
+	&.vamtam-add-shadow {
+		.fl-node-content,
+		.fl-row-content-wrap {
+			box-shadow: none;
+			.fl-pricing-table-inner-wrap {
+				box-shadow: 0 0 40px 0 rgba(0,0,0,0.07);
+			}
+		}
+	}
+}

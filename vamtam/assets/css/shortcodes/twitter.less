@@ -1,0 +1,29 @@
+.single-tweet {
+	text-align: center;
+
+	.tweet-text {
+		margin-bottom: 0px;
+
+		p {
+			margin: 1em 0 .5em 0;
+		}
+	}
+
+	.tweet-time {
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+
+	.tweet-text,
+	.tweet-time {
+		opacity: .95;
+		color: var( --vamtam-primary-font-color );
+	}
+
+	+ .tweet-divider {
+		margin: 16px auto;
+		max-width: 250px;
+		height: 1px;
+		background: var( --vamtam-accent-color-7 );
+	}
+}

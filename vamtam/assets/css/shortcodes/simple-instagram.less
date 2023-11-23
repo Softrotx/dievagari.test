@@ -1,0 +1,76 @@
+#simple-instagram-wrap {
+
+	.simple-instagram-list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+
+		li.simple-instagram-list-item {
+		    width: 16.6666%;
+			margin: 0;
+			padding: 0;
+			float: none;
+			vertical-align: top;
+		    overflow: hidden;
+
+			a {
+				display: block;
+				position: relative;
+				overflow: hidden;
+
+				&:before {
+					font-family: theme;
+					content: icon( vamtam-theme-instagram);
+					font-size: 1.6em;
+					line-height: 1em;
+					display: block;
+					bottom: 20px;
+					left: 20px;
+					color: var( --vamtam-accent-color-5 );
+					position: absolute;
+					z-index: 2;
+					opacity: 0;
+					transform: scale(0.5);
+					transition: all .2s ease-out;
+
+				}
+
+				img {
+					vertical-align: top;
+					transition: transform .7s ease-out;
+					z-index: 1;
+				}
+
+				&:hover {
+					&:before {
+						opacity: 1;
+						transform: scale(1);
+					}
+
+					img  {
+					    transform: scale(1.1);
+				    }
+				}
+			}
+			.simple-instagram-caption {
+				background: var( --vamtam-accent-color-5 );
+				color: var( --vamtam-primary-font-color );
+			}
+		}
+	}
+
+	.si-follow-me a {
+	    .button-gen-common();
+		.button-gen-solid();
+		background: var( --vamtam-accent-color-1 );
+		color: var( --vamtam-accent-color-5 );
+
+		&:hover {
+			background: var( --vamtam-accent-color-2 );
+			color: var( --vamtam-accent-color-5 );
+		};
+	}
+}

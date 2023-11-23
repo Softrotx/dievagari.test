@@ -1,0 +1,12 @@
+<wpml-config>
+    <admin-texts>
+        <key name="vamtam_theme">
+            <key name="header-text-main" />
+            <key name="related-portfolios-title" />
+            <key name="related-posts-title" />
+            <key name="top-bar-text" />
+            <key name="top-bar-layout" />
+            <key name="footer-beaver-template" />
+        </key>
+    </admin-texts>
+</wpml-config>

@@ -1,0 +1,49 @@
+.widget_rss {
+	.widgettitle {
+		a.rsswidget {
+			color: var( --vamtam-h4-color ) !important;
+
+			&:first-child {
+				float: right;
+
+				img {
+					display: block;
+				}
+			}
+		}
+	}
+
+	ul li {
+		padding: 10px 0;
+		border-top: 1px solid var( --vamtam-default-line-color );
+
+		&:first-child {
+			border-top: none;
+			padding-top: 0;
+		}
+	}
+
+	li .rsswidget {
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 1.4;
+		display: inline;
+	}
+
+	.rss-date,
+	li cite {
+		color: var( --vamtam-accent-color-3 );
+		display: block;
+		font-size: 14px;
+	}
+
+	.rss-date {
+		margin: 0.5em 0 1.5em;
+		padding: 0;
+	}
+
+	.rssSummary {
+		margin-bottom: 0.5em;
+		line-height: 1.3em;
+	}
+}

@@ -1,0 +1,51 @@
+div.sharedaddy h3.sd-title {
+	font: inherit;
+	font-weight: 400;
+	margin: 0 !important;
+
+	&:before {
+		display: none !important;
+	}
+}
+
+.sd-social {
+	padding: 40px 0;
+	text-align: center;
+
+	.sd-content ul {
+		margin: 0 !important;
+
+		li {
+			margin: 5px 8px;
+			padding: 0px !important;
+		}
+	}
+}
+
+
+.sd-social-icon .sd-content ul  li[class*='share-'] {
+	a.sd-button {
+	    padding: 10px;
+	    transition: transform 0.30s;
+	    margin: 0px !important;
+
+	    &:before {
+		    font-size: 20px;
+	    }
+
+	    &:hover {
+		    padding: 10px;
+		    transform: scale(1.20);
+		    opacity: 1;
+	    }
+	}
+}
+
+.woocommerce .sd-social {
+	text-align: left;
+	padding: 20px 0;
+
+	li:first-child {
+		margin-left: 0px;
+	}
+}

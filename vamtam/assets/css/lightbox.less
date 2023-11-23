@@ -1,0 +1,120 @@
+.vamtam-button-lightbox-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	background: var( --vamtam-overlay-color );
+	opacity: 0;
+	transition: opacity .4s ease-out;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.vamtam-button-lightbox-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.vamtam-video-frame {
+		width: 100%;
+	}
+}
+
+@media ( max-aspect-ratio: ~"16/9" ) {
+	.vamtam-button-lightbox-content {
+		width: 80vw;
+		height: calc( ~"9/16 * 80vw" );
+	}
+}
+
+@media ( min-aspect-ratio: ~"16/9" ) {
+	.vamtam-button-lightbox-content {
+		width: calc( ~"16/9 * 80vh" );
+		height: 80vh;
+	}
+}
+
+#vamtam-overlay-search {
+	@size: 60px;
+	margin: auto;
+	font-size: 50px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var( --vamtam-accent-color-5 );
+	z-index: 1000;
+	display: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	input[type="search"] {
+		width: 100%;
+		height: 120px;
+		max-width: calc(~"100% - 40px");
+		color: var( --vamtam-accent-color-6 );
+		font-size: 1.0em;
+		font-weight: 100;
+		border: none;
+		border-bottom: 1px solid var( --vamtam-accent-color-4 );
+		background: var( --vamtam-accent-color-5 );
+		transition: all .3s;
+		margin: auto;
+		display: block;
+		border-radius: 0px;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		&:hover {
+			border-color: var( --vamtam-accent-color-1 );
+		}
+		&:focus {
+			outline: none;
+			border-color: var( --vamtam-accent-color-1 );
+			border-width: 2px;
+		}
+	}
+
+	.searchform {
+		position: absolute;
+		top: 35%;
+		left: 15%;
+		right: 15%;
+	}
+}
+
+.vamtam-button-lightbox-close,
+#vamtam-overlay-search-close {
+	height: 70px;
+	width: 70px;
+	padding: 0px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	border: none;
+	text-align: center;
+	overflow: hidden;
+	color: var( --vamtam-body-link-regular );
+	font-size: 0.5em;
+	line-height: 70px;
+	border-radius: var( --vamtam-border-radius-oval );
+	font-family: var( --vamtam-primary-font-font-family );
+	color: var( --vamtam-overlay-color-hc );
+	background: var( --vamtam-overlay-color );
+	transition: all .3s ease;
+
+	&:hover {
+		color: var( --vamtam-accent-color-1-hc );
+		background: var( --vamtam-accent-color-1 );
+	}
+}
+.vamtam-button-lightbox-wrapper .vamtam-button-lightbox-close {
+	font-size: 1.7em;
+}

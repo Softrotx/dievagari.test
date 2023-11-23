@@ -1,0 +1,132 @@
+.team-member-row {
+	position: relative;
+	z-index: 60;
+
+	> div { // columns
+		position: static;
+	}
+}
+
+/* Force floats adjustment */
+@media all and (-webkit-min-device-pixel-ratio: 0) {
+	.team-member-row {
+		display: inline-table;
+		width: 100%;
+		table-layout: fixed;
+	}
+}
+
+.team-member {
+	padding: 0 !important;
+	margin: 0px 0px 20px 0px;
+	overflow: hidden;
+	transition: all .3s ease;
+	z-index: 1;
+	position: relative;
+
+	.thumbnail {
+		overflow: hidden;
+		background: var( --vamtam-default-bg-color );
+		position: relative;
+		border-radius: var( --vamtam-border-radius );
+
+		img {
+		    transition: opacity 0.40s, transform 0.60s;
+			transform: scale(1.10);
+		    display: block;
+		    width: 100%;
+		    height: auto;
+		}
+	}
+
+	&:hover {
+		.thumbnail img {
+			transform: scale(1.0);
+		}
+	}
+	.team-member-email,
+	.team-member-phone {
+		padding-bottom: 5px;
+	}
+
+	.team-member-info {
+		margin-top: 0px;
+		padding: 20px 0px 5px 0px;
+
+		h3 {
+			margin: 0px;
+			padding: 5px 0px;
+
+			a {
+				display: inline-block;
+			}
+		}
+
+		h5 {
+			margin: 0px;
+			font-size: 14px;
+
+		}
+
+		a[href^="mailto:"] {
+			word-wrap: break-word;
+		}
+
+	}
+
+	.share-icons {
+		position: absolute;
+		left: 0;
+		height: auto;
+		width: 96%;
+		padding: 0px;
+		text-align: center;
+		background: none;
+		min-height: 60px;
+		bottom: 35%;
+		transition: opacity .3s, bottom .3s;
+		display: block;
+		margin: 10px 2% 0px 2%;
+		white-space: normal;
+		bottom: 0px;
+		opacity: 0;
+
+		a {
+			display: inline-block;
+			border: none;
+
+			&:hover {
+				.icon.shortcode.use-hover {
+					background: var( --vamtam-accent-color-1 );
+					color: var( --vamtam-accent-color-1-hc ) !important;
+				}
+			}
+		}
+
+		.icon {
+			margin: 10px 5px 0px 5px;
+			width: 40px;
+			height: 40px;
+			color: var( --vamtam-accent-color-1 );
+			text-align: center;
+			font-size: 16px !important;
+			line-height: 20px !important;
+			display: inline-block;
+			padding: 10px !important;
+			border-radius: 100%;
+			background: var( --vamtam-accent-color-5 );
+			transform: scale(0.5);
+			transition: all .5s ease 0s;
+		}
+	}
+
+	&:hover .share-icons {
+		opacity: 1;
+		bottom: 20px;
+
+		.icon {
+			transform: scale(1.0);
+		}
+	}
+}
+

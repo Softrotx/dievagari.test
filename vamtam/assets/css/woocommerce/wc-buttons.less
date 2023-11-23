@@ -1,0 +1,66 @@
+.woocommerce {
+	#place_order {
+		display: block;
+		width: 100%;
+		margin: 1em 0px;
+		padding: 14px 30px !important;
+	}
+	&.woocommerce-cart .cart-collaterals {
+		.button {
+			&:disabled,
+			&:disabled:hover {
+				color: var( --vamtam-accent-color-3 );
+				border-color: currentColor;
+				padding: 14px 30px;
+			}
+		}
+
+		.wc-proceed-to-checkout .button {
+			margin-right: 0px;
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+
+	.button.add_to_cart_button {
+		color: var( --vamtam-body-link-regular );
+		&:focus {
+			outline: none !important;
+		}
+
+		&:not(.added):focus .icon,
+		&:not(.added):focus &:after {
+			color: var( --vamtam-accent-color-1 );
+		}
+
+		.icon {
+			color: var( --vamtam-body-link-regular );
+		}
+
+		&.added {
+			&:after {
+				display: inline-block;
+				height: auto;
+				line-height: 1em;
+				vertical-align: top;
+				margin-left: 10px;
+			}
+
+			+ .added_to_cart {
+				opacity: 0;
+			}
+		}
+
+		&:hover {
+			.icon {
+				color: var( --vamtam-accent-color-5 );
+			}
+		}
+
+		&.loading:after {
+			top: 1.25em;
+			right: 0.65em;
+		}
+	}
+}

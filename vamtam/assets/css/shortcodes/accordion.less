@@ -1,0 +1,66 @@
+.fl-module-vamtam-accordion {
+	.fl-accordion-item {
+		border-left-width: 0;
+		border-right-width: 0;
+		margin-bottom: -1px;
+
+		p:last-child {
+			margin-bottom: 1em;
+		}
+	}
+
+	.fl-accordion-button {
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		.fl-accordion-button-label {
+			color: var( --vamtam-body-link-regular );
+			font-weight: 400;
+		}
+		&:hover {
+			.fl-accordion-button-label {
+				color: var( --vamtam-body-link-hover );
+			}
+			.fl-accordion-button-icon {
+				color: var( --vamtam-body-link-hover );
+
+			}
+		}
+	}
+
+	.fl-accordion-button-icon {
+		opacity: 1;
+		font-size: 1.3em;
+		position: relative;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
+		margin-top: -2px;
+
+		&::before,
+		&::after {
+			content: "" !important;
+			background: currentColor;
+			height: 2px;
+			width: 20px;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transition: transform .3s ease-out;
+		}
+
+		&.vamtam-theme-plus::after {
+			transform: rotate( 90deg );
+		}
+
+		&.vamtam-theme-minus::after {
+			transform: rotate( 45deg );
+		}
+
+		&.vamtam-theme-minus::before {
+			transform: rotate( 135deg );
+		}
+	}
+}

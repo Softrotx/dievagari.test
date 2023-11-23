@@ -1,0 +1,36 @@
+.sitemap {
+	ul {
+		list-style-type: none;
+
+		li {
+			padding-left: 1.5em;
+			text-indent: -1.5em;
+
+			&:before {
+				text-indent: 0;
+				font-family: theme;
+				padding-right: .5em;
+				font-size: 8px;
+				vertical-align: middle;
+			}
+		}
+
+		> li {
+			&:before {
+				content: icon( vamtam-theme-arrow-bottom-sample );
+			}
+
+			li {
+				font-size: .9em;
+
+				&:before {
+					content: icon( vamtam-theme-arrow-right-sample );
+				}
+			}
+		}
+	}
+
+	.top + h2 {
+		margin-top: 20px;
+	}
+}

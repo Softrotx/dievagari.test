@@ -1,0 +1,637 @@
+/* Hide these as soon as possible */
+header.main-header .sub-menu {
+	display: none;
+}
+
+.fl-row-content-wrap:not(.vamtam-show-bg-image),
+.fl-col-content:not(.vamtam-show-bg-image) {
+	background-image: none !important;
+}
+
+::selection {
+	color: var( --vamtam-accent-color-1-hc );
+	background: var( --vamtam-accent-color-1 );
+}
+
+body { overflow-x: visible !important } // booked fix
+
+html {
+	background: var( --vamtam-body-background-background-image ) var( --vamtam-body-background-background-position ) / var( --vamtam-body-background-background-size ) var( --vamtam-body-background-background-repeat ) var( --vamtam-body-background-background-attachment ) var( --vamtam-body-background-background-color );
+}
+
+.vamtam-main {
+	padding-bottom: 0.009px;
+
+	background: var( --vamtam-main-background-background-image ) var( --vamtam-main-background-background-position ) / var( --vamtam-main-background-background-size ) var( --vamtam-main-background-background-repeat ) var( --vamtam-main-background-background-attachment ) var( --vamtam-main-background-background-color );
+}
+
+
+
+.limit-wrapper {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var( --vamtam-site-max-width );
+	width: auto;
+
+	> div {
+		position: relative;
+	}
+}
+
+#page {
+	margin-right: auto;
+	margin-left: auto;
+	min-width: var( --vamtam-site-max-width );
+	width: auto;
+	position: relative;
+	clear: both;
+
+	body.responsive-layout & {
+		min-width: 300px;
+	}
+
+	body.boxed & {
+		max-width: calc( var( --vamtam-site-max-width ) + 2 * var( --vamtam-box-outer-padding ) + var( --vamtam-beaver-global-module_margins_left ) + var( --vamtam-beaver-global-module_margins_right ) );
+	}
+}
+
+#main-content {
+	position: relative;
+	z-index: 9;
+
+	body.fl-builder-active & {
+		z-index: auto;
+	}
+}
+
+.fl-builder-edit body {
+	padding-bottom: 0.01px;
+}
+
+.single-product {
+	&.layout-right-only {
+		.right {
+			padding-top: 0;
+		}
+	}
+	.main-container {
+		border-top: solid 1px var( --vamtam-default-line-color );
+	}
+}
+
+.page-wrapper {
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	> aside.left  {
+		padding-right: 5%;
+		padding-left: var( --vamtam-beaver-global-module_margins_left );
+		min-width: var( --vamtam-left-sidebar-width );
+		flex: 0 1 var( --vamtam-left-sidebar-width ) ;
+		order: 1;
+	}
+
+	> aside.right {
+		padding-left: 5%;
+		padding-right: var( --vamtam-beaver-global-module_margins_right );
+		min-width: var( --vamtam-right-sidebar-width );
+		flex: 0 1 var( --vamtam-right-sidebar-width ) ;
+		order: 10;
+	}
+
+	.vamtam-body-sidebar {
+		box-sizing: border-box;
+		min-height: 1px;
+		margin-top: 40px;
+	}
+
+	> article {
+		position: relative;
+		box-sizing: border-box;
+		padding-top: 0.035px; // the top padding prevents margins from collapsing
+		flex: 1000 1 calc( 100% - var( --vamtam-left-sidebar-width ) - var( --vamtam-right-sidebar-width ) ); // grow as much as necessary
+		order: 2;
+		max-width: 100%;
+
+		body.page-template-page-blank-php & {
+			padding-bottom: 0;
+		}
+
+		.woocommerce.single & {
+			padding-top: 30px;
+		}
+
+		> .page-content {
+			body:not(.fl-builder) &,
+			body.woocommerce.single & {
+				padding-bottom: 30px;
+			}
+		}
+	}
+}
+
+body.single-post:not(.layout-full) .post-content {
+	.fl-row-full-width .fl-row-fixed-width {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+.archive.post-type-archive-product .page-wrapper > article {
+	margin-top: 0px;
+}
+
+.fl-builder {
+	&.archive .page-wrapper > article {
+		margin-top: 40px;
+		padding-bottom: 20px;
+	}
+	.wp-caption.alignleft {
+		margin-left: -30px;
+	}
+}
+
+
+
+
+body.no-page-header {
+	&.no-breadcrumbs {
+		#sub-header {
+			&.layout-left-only,
+			&.layout-left-right {
+				.meta-header {
+					.meta-header-inside {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.main-container {
+	img {
+		box-sizing: border-box;
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	iframe, object, embed {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+.vamtam-video-frame iframe {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+}
+
+code,
+kbd,
+pre,
+samp {
+	hyphens: none;
+	font-size: 14px;
+	font-family: monospace, serif;
+}
+
+pre,
+.wire-pad {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 8px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+pre {
+	border: 1px solid var( --vamtam-default-line-color );
+	background: var( --vamtam-accent-color-5 );
+	font-size: var( --vamtam-primary-font-font-size );
+	line-height: 1.5em;
+
+	.toggle & {
+		padding: 0 !important;
+		border: none;
+	}
+}
+
+code {
+	padding: 0;
+}
+
+.post-article .mejs-container .mejs-controls {
+	background: var( --vamtam-accent-color-1 );
+	bottom: 15px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.post-article .mejs-container {
+	border-radius: var( --vamtam-border-radius );
+	background: var( --vamtam-accent-color-1 );
+	height: 70px !important;
+}
+
+.post-article .mejs-controls .mejs-time-rail {
+	.mejs-time-loaded {
+		background: var( --vamtam-accent-color-5 );
+	}
+
+	.mejs-time-current {
+		background: var( --vamtam-accent-color-6 );
+	}
+}
+
+.error-message {
+	.clearfix;
+	transition: opacity .2s linear .7s !important;
+	position   : absolute;
+	top        : 0;
+	left       : 100% !important;
+	z-index    : 100000;
+	display    : block;
+	overflow   : visible;
+	margin-top : -13px;
+	margin-left: 2px;
+	padding    : 0.5em;
+	height     : 16px;
+	background : none repeat scroll 0 0 #D94729 !important;
+	box-shadow : 0 0 0 1px #D94729 inset;
+	color: #ffffff;
+	white-space: nowrap;
+	line-height: 16px;
+
+	&:before {
+		position: absolute;
+		top     : 50%;
+		left    : 0;
+		margin-top  : -6px;
+		margin-left : -8px;
+		width   : 0;
+		height  : 0;
+		border-width: 6px 6px 6px 0;
+		border-style: inset solid inset none;
+		border-color: transparent #D94729 transparent transparent;
+		content : "";
+	}
+}
+
+.author-info-box {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var( --vamtam-default-line-color );
+
+	.author-avatar {
+		float: left;
+	}
+
+	.author-description {
+		overflow: hidden;
+		padding-left: 20px;
+
+		> h4 {
+			margin-top: 0;
+		}
+	}
+
+	+ .no-posts-by-author {
+		padding-top: 40px;
+		text-align: center;
+	}
+}
+
+.vamtam-scroll-to-top.vamtam-circle {
+	@size: 45px;
+	border-radius: 500px;
+	width: @size;
+	height: @size;
+	line-height: @size;
+	display: inline-block;
+	text-align: center;
+}
+
+.vamtam-only-title {
+	display: none;
+}
+
+body.wp-customizer-unloading {
+	&:after {
+		content: var( --vamtam-loading-animation );
+		position: absolute;
+		top: calc( ~"50% - 35px" );
+		left: calc( ~"50% - 35px" );
+	}
+}
+
+.gmpInfoWindowtitle {
+	margin: 10px 0 10px 6px !important;
+}
+
+.jp-carousel-titleanddesc {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+}
+
+.jp-carousel-left-column-wrapper {
+	margin: auto;
+	.jp-carousel-titleanddesc-title {
+		font-size: 1em !important;
+	}
+}
+.jp-carousel-image-meta {
+	display: none;
+}
+
+.vamtam-testimonials-slider {
+	margin-bottom: 40px !important;
+}
+
+.fl-tabs-horizontal .fl-tabs-labels {
+	font-size: 0px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.fl-tabs-horizontal .fl-tabs-label {
+	float: none;
+	display: inline-block;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.fl-tabs-horizontal .fl-tabs-panels .fl-tabs-label {
+	display: none;
+}
+
+.fl-tabs-horizontal .fl-tabs-label {
+	color: var( --vamtam-accent-color-6 );
+	cursor: pointer;
+	border-width: 0 0 3px 0;
+	position: relative;
+	font-weight: 600;
+	padding: 2px 0;
+	margin: 0 15px;
+
+	&:hover,
+	&.fl-tab-active {
+		background: transparent;
+		color: var( --vamtam-accent-color-1 );
+		border-bottom-color: var( --vamtam-accent-color-1 ) !important;
+	}
+}
+
+.fl-module-vamtam-cta .fl-cta-image {
+	width: 15%;
+}
+.fl-module-vamtam-cta .fl-cta-image img{
+	border-radius: 10em;
+	overflow: hidden;
+	border: 6px solid var( --vamtam-accent-color-7 );
+}
+.fl-module-vamtam-cta .fl-cta-inline .fl-cta-image + .fl-cta-text {
+	padding-right: 10%;
+}
+.fl-module-vamtam-cta h3.fl-cta-title {
+	padding-bottom: 0px;
+}
+.fl-module-vamtam-cta p {
+	margin-top: 0.2em;
+}
+
+/* Trip Advisor Widget fix */
+
+.cdsROW .cdsRating span {
+	padding-top: 10px;
+	display: inline-block;
+}
+
+.cdsROW.wide {
+	margin: auto;
+	border: solid 1px #6aa257;
+	border-radius:60px;
+	padding: 5px 15px;
+}
+
+.rotatingrotation {
+	transform: rotate( 90deg );
+	opacity: 0;
+}
+
+body.wpb-js-composer {
+	.wpb_start_animation.animated {
+		animation-iteration-count: 1 !important;
+	}
+}
+
+.vamtam-responsive-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+html.ios-safari * {
+	background-attachment: scroll !important;
+}
+
+// bands in town
+
+.bit-widget-container .bit-widget {
+
+	.bit-logo-container {
+		display: none;
+	}
+
+	.bit-upcoming-events,
+	.bit-past-events {
+		margin: inherit !important;
+		border-bottom: 1px solid var( --vamtam-accent-color-7 ) !important;
+	}
+	.bit-top-track-button {
+		padding-left: 0px;
+		font-family: var(--vamtam-h1-font-family);
+		color: var(--vamtam-accent-color-6);
+		font-weight: normal;
+		margin-bottom: 5px;
+
+		span {
+		    color: var(--vamtam-body-link-regular);
+		}
+	}
+	.bit-nav-bar-container {
+		padding: 0px;
+	}
+	.bit-nav-bar {
+		font-family: var( --vamtam-h1-font-family );
+		color:  var( --vamtam-accent-color-6 );
+
+		.bit-event-list-title {
+			text-transform: uppercase;
+			font-weight: 600;
+			padding: 0px 20px 5px 0px;
+			font-size: 14px;
+			color: var( --vamtam-accent-color-2 );
+
+			&.bit-clickable {
+				color: var( --vamtam-body-link-regular );
+				text-decoration: none;
+				transition: opacity .3s ease,
+			}
+
+			&:hover {
+				color: var( --vamtam-body-link-hover );
+			}
+
+		}
+	}
+	.bit-event {
+		border-top: 1px solid var( --vamtam-accent-color-7 );
+		background: none !important;
+		padding: 12px 0px !important;
+
+		&:hover {
+			padding: 12px 0px;
+		}
+		.bit-event-buttons {
+			margin: 0px;
+		}
+		.bit-button {
+			border-radius: var( --vamtam-border-radius-oval );
+			font-family: var(--vamtam-h1-font-family);
+			color: var( --vamtam-accent-color-1 );
+			border-width: 2px;
+			font-weight: 600;
+			background-color: transparent;
+			transition: all .3s ease-out;
+			padding-top: 3px;
+			width: auto !important;
+			min-width: 150px;
+			padding: 3px 35px 0px 35px;
+			white-space: nowrap;
+
+			&:hover {
+				color: var( --vamtam-accent-color-1-hc );
+				background-color: var( --vamtam-accent-color-1 );
+				border-color: var( --vamtam-accent-color-1 );
+			}
+		}
+
+		.bit-details {
+			border-bottom: 0;
+		}
+		.bit-date {
+			font-family: var(--vamtam-h5-font-family);
+			color: var( --vamtam-accent-color-6 );
+			text-transform: none;
+			font-size: 20px;
+			min-width: 150px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		.bit-location,
+		.bit-venue {
+			text-align: left;
+			font:var(--vamtam-h5-font-weight) var(--vamtam-h5-font-size)/var(--vamtam-h5-line-height) var(--vamtam-h5-font-family);
+			color: var( --vamtam-accent-color-6 );
+			transition: color .3s ease;
+		}
+		.bit-rsvp-container .bit-button {
+			border-color: transparent;
+		}
+		&:hover {
+			.bit-date,
+			.bit-location,
+			.bit-venue {
+				color: var( --vamtam-accent-color-1 );
+			}
+			.bit-rsvp-container .bit-button {
+				border-color: var( --vamtam-accent-color-1 );
+			}
+		}
+	}
+
+	&.bit-layout-desktop {
+		.bit-event {
+			background: none !important;
+
+			.bit-location,
+			.bit-venue {
+				flex: 1 10 300px;
+				margin: 0px;
+			}
+			.bit-date {
+				margin: 0 20px 0 0;
+			}
+		}
+	}
+
+	.bit-upcoming-events-show-all-button,
+	.bit-past-events-show-all-button {
+		border-radius: var( --vamtam-border-radius-oval );
+		margin: 20px 0px 0px 0px !important;
+		border: none;
+		position: relative;
+		color: rgba(255, 255, 255, 0);
+		overflow: hidden;
+		height: 60px;
+
+		&:before {
+			font-family: theme;
+			content: icon( vamtam-theme-arrow-bottom-sample);
+			color: var( --vamtam-accent-color-1 );
+			font-size: 24px;
+			line-height: 60px;
+			width: 100%;
+			height: 60px;
+			text-align: center;
+			position: absolute;
+			background: var( --vamtam-accent-color-5 );
+			transition: background .3s ease;
+			top: 0px;
+			left: 0px;
+		}
+
+		&:hover:before {
+			background-color: rgba(0, 0, 0, 0.02);
+		}
+
+	}
+}
+
+.bit-widget .bit-play-my-city-button {
+    border-radius: var(--vamtam-border-radius-oval);
+    margin: 20px 0 0 0!important;
+}
+
+@media (min-width: 768px) {
+    .bit-event-lists .bit-upcoming-events .bit-event .bit-details.bit-event-buttons {
+        display: flex;
+        flex-direction: row;
+
+		.bit-rsvp-container {
+			margin: 0;
+		}
+    }
+}
+
+@media (max-width: 767px) {
+    .bit-widget .bit-event .bit-offers-container {
+        margin-top: 5px;
+    }
+}
+
+// genius
+
+.rg_embed.music {
+	width: 100%;
+}
+
+.rg_embed .rg_embed_body a[data-id] {
+	background-color: transparent !important;
+}
